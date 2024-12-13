@@ -17,7 +17,7 @@
     display: flex;
     gap: 20px;
     border: 2px solid green;
-    /* margin gives space to inside of the box */
+    /* padding gives space to inside of the box */
     padding: 50px; 
     /*  margin gives space to outside of the box */
     margin: 50px;
