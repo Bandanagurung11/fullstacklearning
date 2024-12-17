@@ -1,0 +1,85 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #faf7ec;
+    /* width: 100vw; */
+    overflow-x: hidden;
+}
+
+.maindiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 50px;
+    font-size: 20px;
+}
+
+.logo{
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+}
+
+.items{
+    display: flex;
+    gap: 30px;
+    /* justify-content: space-between; */
+}
+
+.login{
+    background-color: #fd975b;
+    height: 40px;
+    width: 70px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+
+}
+.login:hover{
+    cursor: pointer;
+}
+
+.home {
+    color: #fd975b;
+}
+
+.hero{
+    margin-top: 10vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px ;
+    align-items: center;
+}
+.headingtext{
+    font-size: 60px;
+}
+.hero-para{
+    margin-top: 10vh;
+    font-size: 20px;
+}
+
+.button1{
+    height: 8vh;
+    width: 10vw;
+    background-color: #0b363d;
+    color: white;
+}
+.button2{
+    height: 8vh;
+    width: 10vw;
+}
+.dashboard {
+    height: 50vh;
+    width: 60vw;
+    margin-top: 15vh;
+    overflow: hidden;
+
+}
+.custom_wave{
+    position: absolute;
+    bottom: -400px;
+    
+
+}
+
