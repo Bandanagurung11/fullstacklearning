@@ -1,0 +1,150 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .nav_list_item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .login_button {
+    border: none;
+    border-radius: 4px;
+    background-color: #ff8945;
+    padding: 8px 20px;
+    color: white;
+  }
+  .hero_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .hero_section {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .hero_section h1 {
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  
+  .hero_section p {
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .color_orange {
+    color: #ff8945;
+  }
+  
+  .global_button {
+    padding: 10px 25px;
+    border-radius: 2px;
+    border: 1px solid #0a373d;
+  }
+  
+  .button1 {
+    background-color: #0a373d;
+    color: white;
+  }
+  
+  .dashboard_image_wrapper {
+    margin-top: 12px;
+    height: 50vh;
+    width: 60vw;
+    overflow: hidden;
+  }
+  
+  .bg_banner {
+    background-image: url("./banner.jpg");
+    /* height: 100vh; */
+  }
+  
+  .custom_wave {
+    position: absolute;
+    bottom: 0px;
+  }
+  
+  .all_images {
+    margin-top: 20vh;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+  }
+  
+  .global_img {
+    height: 200px;
+    width: 200px;
+  }
+  
+  .feature_section {
+    display: flex;
+  }
+  
+  .feature_left_secion {
+    width: 50vw;
+  }
+  .feature_left_secion p {
+    color: #ff8945;
+    font-weight: 700;
+  }
+  
+  .feature_left_secion h1 {
+    font-size: 70px;
+  }
+  
+  .feature_right_section {
+    width: 50vw;
+  }
+  
+  .two_card_parent {
+    display: flex;
+    gap: 20px;
+    
+  
+  }
+  
+  .global_card {
+    height: 20vh;
+    width: 20vw;
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff89453a;
+  }
+  
+  .feature_right_section{
+    display: flex;
+    gap: 20px;
+  }
+  
+  .leftdiv{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .global_card_third_child{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
