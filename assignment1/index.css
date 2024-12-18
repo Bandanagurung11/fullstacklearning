@@ -70,16 +70,112 @@ body{
     width: 10vw;
 }
 .dashboard {
-    height: 50vh;
-    width: 60vw;
+    height: 60vh;
+    width: 70vw;
     margin-top: 15vh;
     overflow: hidden;
 
 }
 .custom_wave{
     position: absolute;
-    bottom: -400px;
-    
+    bottom: -600px;
+}
+
+/* .all_image{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.global_img{
+    height: 200px;
+    width: 300px;
+} */
+
+.all_img{
+    margin-top: 30vh;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.each_img{
+    height: 200px;
+    width: 200px;
+}
+
+.main_section{
+    display: flex;
+}
+.left_section{
+    width: 50vw;
+}
+
+.left_section p{
+    color: #fd975b;
+    font-weight: 700;
+}
+.left_section h1{
+    font-size: 70px;
+}
+
+.card_section{
+    display: flex;
+    gap: 20px;
+}
+
+.cards{
+    height: 30vh;
+    width: 20vw;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.right_section{
+    width: 50vw;
+     display: flex;
+    gap: 20px; 
+}
+.leftdiv{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.rightdiv{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.appoitment{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
 }
 
+/* .global_card {
+    display: flex;
+    gap: 20px;
+
+} */
+
+.first_child{
+    height: 10vh;
+    width: 20vw;
+    background-color: aqua;
+    display: flex;
+    gap: 20px;
+}
+
+.second_child{
+    margin-top: 20vh;
+    height: 10vh;
+    width: 20vw;
+    background-color: aqua;
+    display: flex;
+    gap: 20px;
+}
