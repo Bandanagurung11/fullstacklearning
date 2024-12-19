@@ -186,7 +186,10 @@ body{
 
 .container{
     margin-top: 20vh;
+    padding: 40px 50px;
     display: flex;
+    align-items: center;
+    gap: 10px;
     background-color: #f2eddd;
 }
 
@@ -202,6 +205,7 @@ body{
 .holder{
     margin-top: 15vh;
     display: flex;
+    flex-direction: column;
     gap: 5vw;
     /* text-decoration-color: #0b363d; */
 }
@@ -226,13 +230,57 @@ body{
     border-radius: 5px;
 
 }
-.dashboard4_container{
-    margin: 20vh;
+.lkjhg{
+    display: flex;
+    align-items: center;
+}
+.akcj{
+    display: flex;
+    justify-content: space-between;
+}
+
+.imageme{
+    height: 50vh;
+    width: 50vw;
+}
+ .performance_metrics{
+    margin: 20vh; 
+    padding: 40px 50px;
     display: flex;
 }
-.left_first{
-    width: 50vw;
+
+/* .dashboard_image{
+     object-fit: contain; 
+    height: 100px;
+    width: 200px;
 }
-.right_second{
+.rightside_content{
     width: 50vw;
+}  */
+
+
+.whole_container{
+    padding: 10vh 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card_section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.each_card{
+    width: 33.3%;
+    padding: 5vh;
+    border: 1px solid yellow;
+    border-radius: 10px;
+}
+
+.get_started{
+    margin-top: 30px;
+    color: blue;
+    border-radius: 5px;
+    padding: 4px;
 }
