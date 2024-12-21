@@ -33,10 +33,13 @@ body{
     border-radius: 5px;
     color: white;
     border: none;
+    transition: all 0.6s ease-in-out;
 
 }
 .login:hover{
     cursor: pointer;
+    box-shadow: 10px 10px 5px -2px rgba(0,0,0,0.75);
+    transition: all 0.6s ease-in-out;
 }
 
 .home {
@@ -81,17 +84,6 @@ body{
     bottom: -600px;
 }
 
-/* .all_image{
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-}
-
-.global_img{
-    height: 200px;
-    width: 300px;
-} */
-
 .all_img{
     margin: 15vh 5vw 0vh 5vw;
     display: flex;
@@ -106,16 +98,14 @@ body{
 
 .main_section{
     display: flex;
+    gap: 30px;
     margin: 10vh 3vw 0vh 3vw;
+
 }
 .left_section{
     width: 50vw;
 }
 
- /* .left_section p{
-    color: #fd975b;
-    font-weight: 700; 
-} */
 .left_section h1{
     font-size: 40px;
     font-weight: 800;
@@ -141,9 +131,6 @@ body{
     gap: 30px;
     padding: 30px;
 }
-/* .svg_icon{
-    padding-left: 0px;
-} */
 .right_section{
     width: 50vw;
      display: flex;
@@ -166,23 +153,6 @@ body{
     align-items: center;
 
 }
-
-/* .first_child{
-    height: 10vh;
-    width: 20vw;
-    background-color: aqua;
-    display: flex;
-    gap: 20px;
-}
-
-.second_child{
-    margin-top: 20vh;
-    height: 10vh;
-    width: 20vw;
-    background-color: aqua;
-    display: flex;
-    gap: 20px;
-} */
 
 .container{
     margin-top: 20vh;
@@ -355,11 +325,14 @@ body{
     border: 1px solid black;
     color: rgb(2, 2, 34);
     border-radius: 5px;
+    transition: all 0.6s ease-in-out;
 }
 .get_started:hover{
     cursor: pointer;
     background-color: #010e10;
     color: white;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    transition: all 0.6s ease-in-out;
 }
 .second_get_started{
     height: 7vh;
@@ -368,9 +341,12 @@ body{
     /* border: 1px solid black; */
     color: white;
     border-radius: 5px;
+    transition: all 0.6s ease-in-out;
 }
 .second_get_started:hover{
     cursor: pointer;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    transition: all 0.6s ease-in-out;
 }
 .secondtop{
     background-color: #0b363d;
@@ -458,4 +434,20 @@ body{
 .common{
     display: flex;
     flex-direction: column;
+}
+.emain_section{
+    display: flex;
+}
+.email{
+    height: 7vh;
+    width: 20vw;
+    background-color: #093036;
+    position: relative;
+}
+.over{
+    height: 6vh ;
+    width: 3vw;
+    position: absolute;
+    left: 22vw;
+    /* bottom: 2v; */
 }
