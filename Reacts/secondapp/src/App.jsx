@@ -68,12 +68,12 @@ export default function App() {
       {/* image section */}
       <div className="relative">
         <img
-          className="border p-4 rounded-2xl bg-gray-50 mt-28 w-9/12 mx-auto"
+          className=" border overflow-hidden p-4 rounded-2xl bg-gray-50 mt-28 w-9/12 mx-auto block"
           src={Dash}
           alt="dashboard"
         />
         <svg
-          className="absolute -bottom-32 left-0 w-full  "
+          className="absolute -bottom-8 lg:-bottom-16 w-full "
           id="wave"
           style={{ transform: "rotate(0deg)", transition: "0.3s" }}
           // style="transform: rotate(0deg); transition: 0.3s"
@@ -103,7 +103,7 @@ export default function App() {
       </div>
 
       {/* five logo section */}
-      <div className="w-10/12 mx-auto grid grid-cols-6 space-x-16 mt-20">
+      <div className="w-10/12 mx-auto grid grid-cols-3 lg:grid-cols-6 space-x-16 mt-20">
         <img src={amazon} alt="amazon-logo" />
         <img src={google} alt="google-logo" />
         <img src={lenovo} alt="lenovo-logo" />
@@ -111,14 +111,55 @@ export default function App() {
         <img src={shopify} alt="shopify-logo" />
         <img src={spotify} alt="apotify-logo" />
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-        obcaecati, repellendus cum natus ratione adipisci deleniti dolorum,
-        impedit perspiciatis nesciunt necessitatibus. Perferendis consectetur
-        eum illo vitae quos est labore corporis minus cum blanditiis facilis
-        enim accusantium dolorem quo, voluptatem totam aspernatur. Quaerat sequi
-        rerum suscipit, tempore tempora quo dolore et?
-      </p>
+
+      {/* easy handling */}
+
+      <div className="w-10/12 mx-auto grid grid-cols-2 mt-20">
+        {/* left section */}
+        <div>
+          <p className="text-orange-600 text-base font-bold">EASY HANDLING</p>
+          <p className="text-4xl font-bold leading-relaxed">
+            Discover Powerful <br />
+            Features To Boost <br />{" "}
+            <span className="text-orange-600">Productivity</span>
+          </p>
+          {/* two cards section */}
+          <div className="grid grid-cols-2 gap-20">
+            {/* first card */}
+            <div className="bg-orange-100 px-6 py-8">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M13.07 10.41a5 5 0 0 0 0-5.82A3.4 3.4 0 0 1 15 4a3.5 3.5 0 0 1 0 7a3.4 3.4 0 0 1-1.93-.59M5.5 7.5A3.5 3.5 0 1 1 9 11a3.5 3.5 0 0 1-3.5-3.5m2 0A1.5 1.5 0 1 0 9 6a1.5 1.5 0 0 0-1.5 1.5M16 17v2H2v-2s0-4 7-4s7 4 7 4m-2 0c-.14-.78-1.33-2-5-2s-4.93 1.31-5 2m11.95-4A5.32 5.32 0 0 1 18 17v2h4v-2s0-3.63-6.06-4Z"
+                />
+              </svg>
+              <p>Multiple user & management</p>
+              <div className="grid grid-cols-2 gap-30">
+                <p>Multi User</p>
+                <p>icon</p>
+              </div>
+            </div>
+
+            {/* second */}
+            <div>
+              <p>icon</p>
+              <p>Editable & highly customizable</p>
+              <div>
+                <p>Customization</p>
+                <p>icone</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* right section */}
+        <div>right</div>
+      </div>
     </div>
   );
 }
