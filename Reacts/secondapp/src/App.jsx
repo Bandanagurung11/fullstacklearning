@@ -19,7 +19,7 @@ export default function App() {
       <div className=" bg-slate-500">
         <div className="flex items-center justify-between text-white p-2 md:w-9/12 mx-auto">
           <div>
-            <img className="h-" src={logo} alt="" />
+            <img src={logo} alt="" />
           </div>
 
           <div className="hidden lg:block">
@@ -1083,14 +1083,14 @@ export default function App() {
       {/* footer section last section */}
 
       <div className="bg-slate-500">
-        <div className=" grid grid-cols-4 gap-12 py-10 pl-10 pr-16">
-          <div className="flex flex-col gap-8">
+        <div className=" w-11/12 mx-auto grid grid-cols-4 gap-4 py-10">
+          <div className="flex flex-col gap-6">
             <img className="h-12 w-12" src={logo} alt="logo" />
-            <div className=" flex gap-2">
+            <div className=" flex gap-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="60"
-                height="60"
+                width="40"
+                height="40"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1103,32 +1103,48 @@ export default function App() {
                   color="currentColor"
                 />
               </svg>
-              <p className="opacity-60">
-                Greater pleasures el esndures pains avoid <br /> welcomed 
+              <p className="opacity-70">
+                Greater pleasures el esndures pains avoid welcomed 
                 avoided pariatu.
               </p>
-              <p>Subscribe to our Site :</p>
-              <input className="h-8 w-42 bg-slate-400" type="text" />
-              <p>© 2025 Loxcy - Created By Themesdesign</p>
-            </div>
+              </div>
+              <p className="text-white">Subscribe to our Site :</p>
+              <input className="h-8 w-42 bg-slate-400" type="text" placeholder="enter email" />
+              <p>© 2025 Loxcy - Created By <span className="text-white text-lg">Themesdesign</span></p>
+            
           </div>
 
 
-          <div>
-           <p className="text-white"> Company :</p> 
-           <p className="opacity-60">Company <br /> Profile <br /> Help Center <br /> Services Plans & Pricing Team
-           Members <br /> Contact</p>
+          <div className="flex flex-col gap-4">
+           <p className="text-white "> Company :</p> 
+            <p>CompanyProfile</p> 
+             <p>Services</p> 
+             <p>Plans & Pricing</p> 
+             <p>Team
+             Members</p> 
+             <p>Contact</p>
           </div>
-          <div>
+
+          <div className="flex flex-col gap-4">
             <p className="text-white">Community :</p> 
-            <p className="opacity-60">Career <br /> Leadership Press & Media Projects <br /> Marketing
-            Services <br /> Challenge Of Project</p>
+            <p>Career </p>
+            <p>Leadership</p> 
+            <p>Press & Media</p> 
+            <p>Projects</p> 
+            <p>Marketing</p>
+            <p>Marketing</p>  
+            <p>Challenge Of Project</p>
           </div>
-          <div>
+
+          <div className="flex flex-col gap-4">
             <p className="text-white">Solution : </p>
-            <p className="opacity-60">Small Business <br />Ebook Library <br /> Free Theme Affiliates <br />
-            Testimonial Themes</p>
+            <p>Small Business</p>
+            <p>Ebook Library </p>
+             <p>Free Theme</p> 
+             <p>Affiliates</p>
+            <p>Testimonial Themes</p>
           </div>
+
         </div>
       </div>
     </div>
