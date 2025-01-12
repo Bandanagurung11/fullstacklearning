@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./favicon.ico";
+import logo from "./assets/images/logo.png";
 import Dash from "./Dashboard.png";
 import google from "./google.svg";
 import lenovo from "./lenovo.svg";
@@ -15,39 +15,39 @@ export default function App() {
     <div>
       {/* navbar */}
       {/* ? bg-[#000000] - it's not use much though for using color properties */}
-
-      <div className=" bg-slate-500">
-        <div className="flex items-center justify-between text-white p-2 md:w-9/12 mx-auto">
-          <div>
-            <img src={logo} alt="" />
+      <div className="bg-[url('./assets/images/banner-2.jpg')] ">
+      <nav className=" bg-slate-700">
+        <div className="flex items-center justify-between text-white p-2 md:w-9/12 lg:w-10/12 mx-auto">
+          <div> 
+            <img src={logo} alt="logoimage" className=" mix-blend-multiply" />
           </div>
 
           <div className="hidden lg:block">
             <div className="flex gap-10 font-semibold">
-              <p className=" cursor-pointer text-orange-600">home</p>
+              <p className=" cursor-pointer text-orange-600">Home</p>
               <p className=" hover:text-orange-500 duration-300 cursor-pointer">
-                about
+                About
               </p>
               <p className=" hover:text-orange-500 duration-300 cursor-pointer">
-                services
+                Services
               </p>
               <p className=" hover:text-orange-500 duration-300 cursor-pointer">
-                price
+                Price
               </p>
               <p className=" hover:text-orange-500 duration-300 cursor-pointer">
-                contacts
+                Contacts
               </p>
             </div>
           </div>
-          <button className=" bg-orange-600 pl-8 pr-8 pt-2 pb-2 font-semibold">
-            login
+          <button className=" bg-orange-600 pl-8 pr-8 pt-2 pb-2 font-semibold rounded-md">
+            Login
           </button>
         </div>
-      </div>
+      </nav>
 
       {/* hero section */}
       <div className=" lg:w-7/12 mx-auto mt-24 flex flex-col gap-9 items-center">
-        <h1 className=" text-3xl lg:text-5xl text-center font-semibold leading-relaxed">
+        <h1 className="text-5xl text-center font-bold leading-loose">
           Make Your Business Flourish with{" "}
           <span className=" text-orange-500">Digital Marketing</span>
         </h1>
@@ -61,7 +61,7 @@ export default function App() {
           <button className=" bg-slate-800 text-white px-8 py-3">
             Try 30 Days Trial
           </button>
-          <button className=" border border-slate-800 px-8 py-3">
+          <button className=" border border-slate-800 px-8 py-3 ">
             Schedule a call
           </button>
         </div>
@@ -103,8 +103,12 @@ export default function App() {
           ></path>
         </svg>
       </div>
+      </div>
+    
+      
 
-      {/* five logo section */}
+      
+        {/* five logo section */}
       <div className="w-10/12 mx-auto grid grid-cols-3 lg:grid-cols-6 space-x-16 mt-20">
         <img src={amazon} alt="amazon-logo" />
         <img src={google} alt="google-logo" />
@@ -120,11 +124,11 @@ export default function App() {
         {/* left section */}
         <div className="flex flex-col gap-20">
           <div>
-            <p className="text-orange-600 text-base font-bold">EASY HANDLING</p>
+            <p className="text-orange-400 text-base font-bold">EASY HANDLING</p>
             <p className="text-4xl font-bold leading-relaxed">
               Discover Powerful <br />
               Features To Boost <br />{" "}
-              <span className="text-orange-600">Productivity</span>
+              <span className="text-orange-400">Productivity</span>
             </p>
           </div>
           {/* two cards section */}
@@ -340,6 +344,7 @@ export default function App() {
           </div>
         </div>
       </div>
+      
 
       {/* STRUCTURE section */}
       <div className="bg-orange-100/50 py-20">
