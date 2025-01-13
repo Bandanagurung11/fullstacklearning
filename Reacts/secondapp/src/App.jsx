@@ -16,335 +16,349 @@ export default function App() {
       {/* navbar */}
       {/* ? bg-[#000000] - it's not use much though for using color properties */}
       <div className="bg-[url('./assets/images/banner-2.jpg')] ">
-      <nav className=" bg-slate-700">
-        <div className="flex items-center justify-between text-white p-2 md:w-9/12 lg:w-10/12 mx-auto">
-          <div> 
-            <img src={logo} alt="logoimage" className=" mix-blend-multiply" />
-          </div>
-
-          <div className="hidden lg:block">
-            <div className="flex gap-10 font-semibold">
-              <p className=" cursor-pointer text-orange-600">Home</p>
-              <p className=" hover:text-orange-500 duration-300 cursor-pointer">
-                About
-              </p>
-              <p className=" hover:text-orange-500 duration-300 cursor-pointer">
-                Services
-              </p>
-              <p className=" hover:text-orange-500 duration-300 cursor-pointer">
-                Price
-              </p>
-              <p className=" hover:text-orange-500 duration-300 cursor-pointer">
-                Contacts
-              </p>
+        <nav className=" bg-slate-700 py-2">
+          <div className="flex items-center justify-between text-white p-2 md:w-9/12 lg:w-11/12 mx-auto">
+            <div className="flex gap-2 items-center">
+              {/* <img src={logo} alt="logoimage" className="bg-transparent block text-white"   /> */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="orange"
+                  fill-rule="evenodd"
+                  d="M7 18.25a2.5 2.5 0 0 0-1.875-2.421V5.4l6.125 6.613l-.22.213C9.692 13.522 8.19 14.976 8.25 17c.044 1.456.95 3.782 3.75 3.75c2.8-.03 3.75-2.13 3.75-3.75c0-2.268-1.456-3.625-2.988-4.987c.445-.477 1.283-1.287 1.842-1.828c.305-.295.528-.51.559-.547l.003-.005c.117-.142.461-.563.115-.989c-.281-.344-.706-.212-.9-.112L12 10.782C9.875 8.55 5.644 4.032 5.319 3.657c-.313-.363-.582-.42-.675-.407a.776.776 0 0 0-.769.713v11.866A2.501 2.501 0 1 0 7 18.25M18.875 8.172V20.05c.019.244.162.725.644.7c.475-.025.606-.475.606-.7V8.172a2.501 2.501 0 1 0-1.25 0m1.562-2.422a.938.938 0 1 1-1.875 0a.938.938 0 0 1 1.875 0M9.5 16.844c0-1.35 1.625-2.844 2.5-3.594c.831.762 2.5 2.406 2.5 3.594c0 1.569-.857 2.593-2.519 2.656c-1.656.063-2.481-1.313-2.481-2.656m-5 2.343a.937.937 0 1 0 0-1.875a.937.937 0 0 0 0 1.875"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <p className="text-2xl font-bold tracking-widest">LOXCY</p>
             </div>
+
+            <div className="hidden lg:block">
+              <div className="flex gap-10 font-semibold">
+                <p className=" cursor-pointer text-orange-600">Home</p>
+                <p className=" hover:text-orange-500 duration-300 cursor-pointer">
+                  About
+                </p>
+                <p className=" hover:text-orange-500 duration-300 cursor-pointer">
+                  Services
+                </p>
+                <p className=" hover:text-orange-500 duration-300 cursor-pointer">
+                  Price
+                </p>
+                <p className=" hover:text-orange-500 duration-300 cursor-pointer">
+                  Contacts
+                </p>
+              </div>
+            </div>
+            <button className=" bg-orange-600 pl-8 pr-8 pt-2 pb-2 font-semibold rounded-md">
+              Login
+            </button>
           </div>
-          <button className=" bg-orange-600 pl-8 pr-8 pt-2 pb-2 font-semibold rounded-md">
-            Login
-          </button>
+        </nav>
+
+        {/* hero section */}
+        <div className=" lg:w-8/12 mx-auto mt-24 flex flex-col gap-9 items-center">
+          <h1 className=" text-2xl lg:text-6xl text-[#0b363d] text-center font-bold leading-loose">
+            Make Your Business Flourish with{" "}
+            <span className=" text-orange-500">Digital Marketing</span>
+          </h1>
+          <p className=" text-center opacity-60">
+            Save time on creating a website from scratch. Use a rich collection
+            of ready-made websites to get your project off to a fast start
+            opposed to using 'Content here, content here', making it look like
+            readable English.
+          </p>
+          <div className=" space-x-4 lg:space-x-8">
+            <button className=" bg-slate-800 text-white p-4 lg:px-8 rounded-md lg:py-3">
+              Try 30 Days Trial
+            </button>
+            <button className=" border border-slate-800 rounded-md p-4 lg:px-8 lg:py-3 ">
+              Schedule a call
+            </button>
+          </div>
         </div>
-      </nav>
 
-      {/* hero section */}
-      <div className=" lg:w-7/12 mx-auto mt-24 flex flex-col gap-9 items-center">
-        <h1 className="text-5xl text-center font-bold leading-loose">
-          Make Your Business Flourish with{" "}
-          <span className=" text-orange-500">Digital Marketing</span>
-        </h1>
-        <p className=" text-center">
-          Save time on creating a website from scratch. Use a rich collection of
-          ready-made websites to get your project off to a fast start opposed to
-          using 'Content here, content here', making it look like readable
-          English.
-        </p>
-        <div className=" lg:space-x-8">
-          <button className=" bg-slate-800 text-white px-8 py-3">
-            Try 30 Days Trial
-          </button>
-          <button className=" border border-slate-800 px-8 py-3 ">
-            Schedule a call
-          </button>
+        {/* image section */}
+        <div className="relative">
+          <img
+            className=" border overflow-hidden p-4 rounded-2xl bg-gray-50 mt-28 w-9/12 mx-auto block"
+            src={Dash}
+            alt="dashboard"
+          />
+          <svg
+            className="absolute -bottom-8 lg:-bottom-16 w-full "
+            id="wave"
+            style={{ transform: "rotate(0deg)", transition: "0.3s" }}
+            // style="transform: rotate(0deg); transition: 0.3s"
+            viewBox="0 0 1440 370"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
+                <stop
+                  stop-color="rgba(245.49, 245.49, 245.49, 1)"
+                  offset="0%"
+                ></stop>
+                <stop
+                  stop-color="rgba(231.829, 223.382, 204.708, 1)"
+                  offset="100%"
+                ></stop>
+              </linearGradient>
+            </defs>
+            <path
+              style={{ transform: "translate(0, 0px)", opacity: "1" }}
+              // style="transform: translate(0, 0px); opacity: 1"
+              fill="url(#sw-gradient-0)"
+              d="M0,74L120,104.8C240,136,480,197,720,222C960,247,1200,234,1440,203.5C1680,173,1920,123,2160,92.5C2400,62,2640,49,2880,37C3120,25,3360,12,3600,6.2C3840,0,4080,0,4320,18.5C4560,37,4800,74,5040,104.8C5280,136,5520,160,5760,178.8C6000,197,6240,210,6480,228.2C6720,247,6960,271,7200,265.2C7440,259,7680,222,7920,178.8C8160,136,8400,86,8640,67.8C8880,49,9120,62,9360,92.5C9600,123,9840,173,10080,160.3C10320,148,10560,74,10800,49.3C11040,25,11280,49,11520,98.7C11760,148,12000,222,12240,265.2C12480,308,12720,321,12960,283.7C13200,247,13440,160,13680,129.5C13920,99,14160,123,14400,123.3C14640,123,14880,99,15120,117.2C15360,136,15600,197,15840,197.3C16080,197,16320,136,16560,129.5C16800,123,17040,173,17160,197.3L17280,222L17280,370L17160,370C17040,370,16800,370,16560,370C16320,370,16080,370,15840,370C15600,370,15360,370,15120,370C14880,370,14640,370,14400,370C14160,370,13920,370,13680,370C13440,370,13200,370,12960,370C12720,370,12480,370,12240,370C12000,370,11760,370,11520,370C11280,370,11040,370,10800,370C10560,370,10320,370,10080,370C9840,370,9600,370,9360,370C9120,370,8880,370,8640,370C8400,370,8160,370,7920,370C7680,370,7440,370,7200,370C6960,370,6720,370,6480,370C6240,370,6000,370,5760,370C5520,370,5280,370,5040,370C4800,370,4560,370,4320,370C4080,370,3840,370,3600,370C3360,370,3120,370,2880,370C2640,370,2400,370,2160,370C1920,370,1680,370,1440,370C1200,370,960,370,720,370C480,370,240,370,120,370L0,370Z"
+            ></path>
+          </svg>
         </div>
       </div>
 
-      {/* image section */}
-      <div className="relative">
-        <img
-          className=" border overflow-hidden p-4 rounded-2xl bg-gray-50 mt-28 w-9/12 mx-auto block"
-          src={Dash}
-          alt="dashboard"
-        />
-        <svg
-          className="absolute -bottom-8 lg:-bottom-16 w-full "
-          id="wave"
-          style={{ transform: "rotate(0deg)", transition: "0.3s" }}
-          // style="transform: rotate(0deg); transition: 0.3s"
-          viewBox="0 0 1440 370"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-              <stop
-                stop-color="rgba(245.49, 245.49, 245.49, 1)"
-                offset="0%"
-              ></stop>
-              <stop
-                stop-color="rgba(231.829, 223.382, 204.708, 1)"
-                offset="100%"
-              ></stop>
-            </linearGradient>
-          </defs>
-          <path
-            style={{ transform: "translate(0, 0px)", opacity: "1" }}
-            // style="transform: translate(0, 0px); opacity: 1"
-            fill="url(#sw-gradient-0)"
-            d="M0,74L120,104.8C240,136,480,197,720,222C960,247,1200,234,1440,203.5C1680,173,1920,123,2160,92.5C2400,62,2640,49,2880,37C3120,25,3360,12,3600,6.2C3840,0,4080,0,4320,18.5C4560,37,4800,74,5040,104.8C5280,136,5520,160,5760,178.8C6000,197,6240,210,6480,228.2C6720,247,6960,271,7200,265.2C7440,259,7680,222,7920,178.8C8160,136,8400,86,8640,67.8C8880,49,9120,62,9360,92.5C9600,123,9840,173,10080,160.3C10320,148,10560,74,10800,49.3C11040,25,11280,49,11520,98.7C11760,148,12000,222,12240,265.2C12480,308,12720,321,12960,283.7C13200,247,13440,160,13680,129.5C13920,99,14160,123,14400,123.3C14640,123,14880,99,15120,117.2C15360,136,15600,197,15840,197.3C16080,197,16320,136,16560,129.5C16800,123,17040,173,17160,197.3L17280,222L17280,370L17160,370C17040,370,16800,370,16560,370C16320,370,16080,370,15840,370C15600,370,15360,370,15120,370C14880,370,14640,370,14400,370C14160,370,13920,370,13680,370C13440,370,13200,370,12960,370C12720,370,12480,370,12240,370C12000,370,11760,370,11520,370C11280,370,11040,370,10800,370C10560,370,10320,370,10080,370C9840,370,9600,370,9360,370C9120,370,8880,370,8640,370C8400,370,8160,370,7920,370C7680,370,7440,370,7200,370C6960,370,6720,370,6480,370C6240,370,6000,370,5760,370C5520,370,5280,370,5040,370C4800,370,4560,370,4320,370C4080,370,3840,370,3600,370C3360,370,3120,370,2880,370C2640,370,2400,370,2160,370C1920,370,1680,370,1440,370C1200,370,960,370,720,370C480,370,240,370,120,370L0,370Z"
-          ></path>
-        </svg>
-      </div>
-      </div>
-    
-      
-
-      
+      <div className="bg-[#f2f0ec] py-20 space-y-48">
         {/* five logo section */}
-      <div className="w-10/12 mx-auto grid grid-cols-3 lg:grid-cols-6 space-x-16 mt-20">
-        <img src={amazon} alt="amazon-logo" />
-        <img src={google} alt="google-logo" />
-        <img src={lenovo} alt="lenovo-logo" />
-        <img src={paypal} alt="paypal-logo" />
-        <img src={shopify} alt="shopify-logo" />
-        <img src={spotify} alt="apotify-logo" />
-      </div>
+        <div className="w-10/12 mx-auto grid grid-cols-3 lg:grid-cols-6 space-x-16 ">
+          <img className="h-8" src={amazon} alt="amazon-logo" />
+          <img className="h-8" src={google} alt="google-logo" />
+          <img className="h-8" src={lenovo} alt="lenovo-logo" />
+          <img className="h-8" src={paypal} alt="paypal-logo" />
+          <img className="h-8" src={shopify} alt="shopify-logo" />
+          <img className="h-8" src={spotify} alt="apotify-logo" />
+        </div>
 
-      {/* easy handling section */}
+        {/* easy handling section */}
 
-      <div className="w-10/12 mx-auto grid grid-cols-2 gap-6 my-20">
-        {/* left section */}
-        <div className="flex flex-col gap-20">
+        <div className="w-10/12 mx-auto grid grid-cols-2 gap-6 my-20">
+          {/* left section */}
+          <div className="flex flex-col gap-20">
+            <div>
+              <p className="text-orange-400 text-base font-bold">
+                EASY HANDLING
+              </p>
+              <p className="text-4xl font-bold leading-relaxed">
+                Discover Powerful <br />
+                Features To Boost <br />{" "}
+                <span className="text-orange-400">Productivity</span>
+              </p>
+            </div>
+            {/* two cards section */}
+            <div className="grid grid-cols-2 gap-6">
+              {/* first card */}
+              <div className="bg-[#fff9f5] px-6 py-8 flex flex-col gap-8 rounded-2xl">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M13.07 10.41a5 5 0 0 0 0-5.82A3.4 3.4 0 0 1 15 4a3.5 3.5 0 0 1 0 7a3.4 3.4 0 0 1-1.93-.59M5.5 7.5A3.5 3.5 0 1 1 9 11a3.5 3.5 0 0 1-3.5-3.5m2 0A1.5 1.5 0 1 0 9 6a1.5 1.5 0 0 0-1.5 1.5M16 17v2H2v-2s0-4 7-4s7 4 7 4m-2 0c-.14-.78-1.33-2-5-2s-4.93 1.31-5 2m11.95-4A5.32 5.32 0 0 1 18 17v2h4v-2s0-3.63-6.06-4Z"
+                  />
+                </svg>
+                <p className="font-bold text-lg">Multiple user & management</p>
+                <div className="flex justify-between">
+                  <p>Multi User</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              {/* second */}
+              <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  >
+                    <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                    <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
+                  </g>
+                </svg>
+                <p className="font-bold text-lg">
+                  Editable & highly customizable
+                </p>
+                <div className="flex justify-between">
+                  <p>Customization</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* right section */}
           <div>
-            <p className="text-orange-400 text-base font-bold">EASY HANDLING</p>
-            <p className="text-4xl font-bold leading-relaxed">
-              Discover Powerful <br />
-              Features To Boost <br />{" "}
-              <span className="text-orange-400">Productivity</span>
-            </p>
-          </div>
-          {/* two cards section */}
-          <div className="grid grid-cols-2 gap-6">
-            {/* first card */}
-            <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="60"
-                height="60"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M13.07 10.41a5 5 0 0 0 0-5.82A3.4 3.4 0 0 1 15 4a3.5 3.5 0 0 1 0 7a3.4 3.4 0 0 1-1.93-.59M5.5 7.5A3.5 3.5 0 1 1 9 11a3.5 3.5 0 0 1-3.5-3.5m2 0A1.5 1.5 0 1 0 9 6a1.5 1.5 0 0 0-1.5 1.5M16 17v2H2v-2s0-4 7-4s7 4 7 4m-2 0c-.14-.78-1.33-2-5-2s-4.93 1.31-5 2m11.95-4A5.32 5.32 0 0 1 18 17v2h4v-2s0-3.63-6.06-4Z"
-                />
-              </svg>
-              <p className="font-bold text-lg">Multiple user & management</p>
-              <div className="flex justify-between">
-                <p>Multi User</p>
+            {/* upper two cards */}
+            <div className="grid grid-cols-2 gap-6">
+              <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
+                  width="60"
+                  height="60"
+                  viewBox="0 0 16 16"
                 >
                   <path
                     fill="none"
                     stroke="currentColor"
-                    d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
+                    stroke-linejoin="round"
+                    d="M6.5 14.5h-3v-13h9V7M5 4.5h6m-6 2h4m1.5 3v2L12 13m1.5-1.5a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z"
                   />
                 </svg>
+                <p className="font-bold text-lg">Advanced online appointment</p>
+                <div className="flex justify-between">
+                  <p>Appoinment</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="60"
+                  height="60"
+                  viewBox="0 0 2048 2048"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M2048 1280v768H1024v-768h256v-256h512v256zm-640 0h256v-128h-256zm512 384h-128v128h-128v-128h-256v128h-128v-128h-128v256h768zm0-256h-768v128h768zm-355-512q-54-61-128-94t-157-34q-80 0-149 30t-122 82t-83 123t-30 149q0 92-41 173t-116 136q45 23 84 53t73 68v338q0-79-30-149t-82-122t-123-83t-149-30q-80 0-149 30t-122 82t-83 123t-30 149H0q0-73 20-141t57-129t90-108t118-81q-74-54-115-135t-42-174q0-79 30-149t82-122t122-83t150-30q92 0 173 41t136 116q38-75 97-134t135-98q-74-54-115-135t-42-174q0-79 30-149t82-122t122-83t150-30q79 0 149 30t122 82t83 123t30 149q0 92-41 173t-116 136q68 34 123 85t93 118zM512 1408q53 0 99-20t82-55t55-81t20-100q0-53-20-99t-55-82t-81-55t-100-20q-53 0-99 20t-82 55t-55 81t-20 100q0 53 20 99t55 82t81 55t100 20m512-1024q0 53 20 99t55 82t81 55t100 20q53 0 99-20t82-55t55-81t20-100q0-53-20-99t-55-82t-81-55t-100-20q-53 0-99 20t-82 55t-55 81t-20 100"
+                  />
+                </svg>
+                <p className="font-bold text-lg">Advanced online appointment</p>
+                <div className="flex justify-between">
+                  <p>Management</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
 
-            {/* second */}
-            <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-              >
-                <g
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                >
-                  <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-                  <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
-                </g>
-              </svg>
-              <p className="font-bold text-lg">
-                Editable & highly customizable
-              </p>
-              <div className="flex justify-between">
-                <p>Customization</p>
+            {/* lower two cards */}
+            <div className="grid grid-cols-2 gap-6 mt-4">
+              <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
+                  width="60"
+                  height="60"
+                  viewBox="0 0 20 20"
                 >
                   <path
-                    fill="none"
-                    stroke="currentColor"
-                    d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
+                    fill="currentColor"
+                    d="M10 3c2.817 0 4.415 1.923 4.647 4.246h.07c1.535 0 2.824 1.083 3.183 2.547a4 4 0 0 0-.531-.273a6 6 0 0 0-.785-.266a2.26 2.26 0 0 0-1.866-1.008h-.071a1 1 0 0 1-.995-.9C13.45 5.325 12.109 4 10 4C7.886 4 6.551 5.316 6.348 7.345a1 1 0 0 1-.995.901h-.07C4.027 8.246 3 9.304 3 10.623C3 11.943 4.028 13 5.282 13H10v1H5.282C3.469 14 2 12.488 2 10.623C2 8.82 3.373 7.347 5.102 7.251l.251-.005C5.587 4.908 7.183 3 10 3m7.471 11.283c-.81.462-1.863.717-2.971.717s-2.16-.255-2.971-.717A4 4 0 0 1 11 13.92V17c0 1.105 1.567 2 3.5 2s3.5-.895 3.5-2v-3.08a4 4 0 0 1-.529.363M14.5 10c-1.933 0-3.5.895-3.5 2s1.567 2 3.5 2s3.5-.895 3.5-2s-1.567-2-3.5-2"
                   />
                 </svg>
+                <p className="font-bold text-lg">Superfast cloud data saved</p>
+                <div className="flex justify-between">
+                  <p>Cloud Server</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
 
-        {/* right section */}
-        <div>
-          {/* upper two cards */}
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="60"
-                height="60"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linejoin="round"
-                  d="M6.5 14.5h-3v-13h9V7M5 4.5h6m-6 2h4m1.5 3v2L12 13m1.5-1.5a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z"
-                />
-              </svg>
-              <p className="font-bold text-lg">Advanced online appointment</p>
-              <div className="flex justify-between">
-                <p>Appoinment</p>
+              <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="60"
+                  height="60"
                   viewBox="0 0 24 24"
                 >
-                  <path
+                  <g
                     fill="none"
                     stroke="currentColor"
-                    d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
-                  />
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                  >
+                    <path d="M4 12V2.6a.6.6 0 0 1 .6-.6h11.652a.6.6 0 0 1 .424.176l3.148 3.148A.6.6 0 0 1 20 5.75V21.4a.6.6 0 0 1-.6.6H11" />
+                    <path d="M16 2v3.4a.6.6 0 0 0 .6.6H20M1.992 19h3m3 0h-3m0 0v-3m0 3v3" />
+                  </g>
                 </svg>
-              </div>
-            </div>
-
-            <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="60"
-                height="60"
-                viewBox="0 0 2048 2048"
-              >
-                <path
-                  fill="currentColor"
-                  d="M2048 1280v768H1024v-768h256v-256h512v256zm-640 0h256v-128h-256zm512 384h-128v128h-128v-128h-256v128h-128v-128h-128v256h768zm0-256h-768v128h768zm-355-512q-54-61-128-94t-157-34q-80 0-149 30t-122 82t-83 123t-30 149q0 92-41 173t-116 136q45 23 84 53t73 68v338q0-79-30-149t-82-122t-123-83t-149-30q-80 0-149 30t-122 82t-83 123t-30 149H0q0-73 20-141t57-129t90-108t118-81q-74-54-115-135t-42-174q0-79 30-149t82-122t122-83t150-30q92 0 173 41t136 116q38-75 97-134t135-98q-74-54-115-135t-42-174q0-79 30-149t82-122t122-83t150-30q79 0 149 30t122 82t83 123t30 149q0 92-41 173t-116 136q68 34 123 85t93 118zM512 1408q53 0 99-20t82-55t55-81t20-100q0-53-20-99t-55-82t-81-55t-100-20q-53 0-99 20t-82 55t-55 81t-20 100q0 53 20 99t55 82t81 55t100 20m512-1024q0 53 20 99t55 82t81 55t100 20q53 0 99-20t82-55t55-81t20-100q0-53-20-99t-55-82t-81-55t-100-20q-53 0-99 20t-82 55t-55 81t-20 100"
-                />
-              </svg>
-              <p className="font-bold text-lg">Advanced online appointment</p>
-              <div className="flex justify-between">
-                <p>Management</p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          {/* lower two cards */}
-          <div className="grid grid-cols-2 gap-6 mt-4">
-            <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="60"
-                height="60"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill="currentColor"
-                  d="M10 3c2.817 0 4.415 1.923 4.647 4.246h.07c1.535 0 2.824 1.083 3.183 2.547a4 4 0 0 0-.531-.273a6 6 0 0 0-.785-.266a2.26 2.26 0 0 0-1.866-1.008h-.071a1 1 0 0 1-.995-.9C13.45 5.325 12.109 4 10 4C7.886 4 6.551 5.316 6.348 7.345a1 1 0 0 1-.995.901h-.07C4.027 8.246 3 9.304 3 10.623C3 11.943 4.028 13 5.282 13H10v1H5.282C3.469 14 2 12.488 2 10.623C2 8.82 3.373 7.347 5.102 7.251l.251-.005C5.587 4.908 7.183 3 10 3m7.471 11.283c-.81.462-1.863.717-2.971.717s-2.16-.255-2.971-.717A4 4 0 0 1 11 13.92V17c0 1.105 1.567 2 3.5 2s3.5-.895 3.5-2v-3.08a4 4 0 0 1-.529.363M14.5 10c-1.933 0-3.5.895-3.5 2s1.567 2 3.5 2s3.5-.895 3.5-2s-1.567-2-3.5-2"
-                />
-              </svg>
-              <p className="font-bold text-lg">Superfast cloud data saved</p>
-              <div className="flex justify-between">
-                <p>Cloud Server</p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
-                  />
-                </svg>
-              </div>
-            </div>
-
-            <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="60"
-                height="60"
-                viewBox="0 0 24 24"
-              >
-                <g
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                >
-                  <path d="M4 12V2.6a.6.6 0 0 1 .6-.6h11.652a.6.6 0 0 1 .424.176l3.148 3.148A.6.6 0 0 1 20 5.75V21.4a.6.6 0 0 1-.6.6H11" />
-                  <path d="M16 2v3.4a.6.6 0 0 0 .6.6H20M1.992 19h3m3 0h-3m0 0v-3m0 3v3" />
-                </g>
-              </svg>
-              <p className="font-bold text-lg">
-                User Next Level Interface Site
-              </p>
-              <div className="flex justify-between">
-                <p>Website</p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
-                  />
-                </svg>
+                <p className="font-bold text-lg">
+                  User Next Level Interface Site
+                </p>
+                <div className="flex justify-between">
+                  <p>Website</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
 
       {/* STRUCTURE section */}
       <div className="bg-orange-100/50 py-20">
@@ -1109,35 +1123,39 @@ export default function App() {
                 />
               </svg>
               <p className="opacity-70">
-                Greater pleasures el esndures pains avoid welcomed 
-                avoided pariatu.
+                Greater pleasures el esndures pains avoid welcomed avoided
+                pariatu.
               </p>
-              </div>
-              <p className="text-white">Subscribe to our Site :</p>
-              <input className="h-8 w-42 bg-slate-400" type="text" placeholder="enter email" />
-              <p>© 2025 Loxcy - Created By <span className="text-white text-lg">Themesdesign</span></p>
-            
-          </div>
-
-
-          <div className="flex flex-col gap-4">
-           <p className="text-white "> Company :</p> 
-            <p>CompanyProfile</p> 
-             <p>Services</p> 
-             <p>Plans & Pricing</p> 
-             <p>Team
-             Members</p> 
-             <p>Contact</p>
+            </div>
+            <p className="text-white">Subscribe to our Site :</p>
+            <input
+              className="h-8 w-42 bg-slate-400"
+              type="text"
+              placeholder="enter email"
+            />
+            <p>
+              © 2025 Loxcy - Created By{" "}
+              <span className="text-white text-lg">Themesdesign</span>
+            </p>
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="text-white">Community :</p> 
+            <p className="text-white "> Company :</p>
+            <p>CompanyProfile</p>
+            <p>Services</p>
+            <p>Plans & Pricing</p>
+            <p>Team Members</p>
+            <p>Contact</p>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <p className="text-white">Community :</p>
             <p>Career </p>
-            <p>Leadership</p> 
-            <p>Press & Media</p> 
-            <p>Projects</p> 
+            <p>Leadership</p>
+            <p>Press & Media</p>
+            <p>Projects</p>
             <p>Marketing</p>
-            <p>Marketing</p>  
+            <p>Marketing</p>
             <p>Challenge Of Project</p>
           </div>
 
@@ -1145,11 +1163,10 @@ export default function App() {
             <p className="text-white">Solution : </p>
             <p>Small Business</p>
             <p>Ebook Library </p>
-             <p>Free Theme</p> 
-             <p>Affiliates</p>
+            <p>Free Theme</p>
+            <p>Affiliates</p>
             <p>Testimonial Themes</p>
           </div>
-
         </div>
       </div>
     </div>
