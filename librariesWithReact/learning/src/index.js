@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './pages/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from "react-router";
-import Contact from './Contact';
-import About from './About';
-import Service from './Service';
-import Pricing from './Pricing';
-import Login from './Login';
+
+import Service from './pages/Service';
+import Pricing from './pages/Pricing';
+import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Footer2 from './components/Footer2';
+import Contact from './pages/Contact';
+import About from './pages/About';
+import ScrollThrough from './components/ScrollThrough';
+// import Footer2 from './components/Footer2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +21,7 @@ root.render(
     <BrowserRouter>
     {/* <App /> */}
     <Navbar/>
+    <ScrollThrough/>
 
     <Routes>
       <Route path="/" element={<App />} />
@@ -31,7 +34,7 @@ root.render(
 
     </Routes>
     <Footer/>
-    <Footer2/>
+    {/* <Footer2/> */}
   </BrowserRouter>
   </React.StrictMode>
 );

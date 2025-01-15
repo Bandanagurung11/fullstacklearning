@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import logo from "../logo.svg";
+import logo from "../images/logo.svg";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 // practice\first\src\logo.svg
@@ -18,7 +18,9 @@ export default function Navbar() {
   return (
     <nav className="bg-[#0B363D]">
         <div className=" flex items-center justify-between lg:w-8/12 mx-auto    text-white p-2 ">
+          <Link to={"/"}>
           <img className=" h-10" src={logo} alt="" />
+          </Link>
 
           <div className="hidden lg:block">
             <div className="flex gap-10 font-semibold ">
