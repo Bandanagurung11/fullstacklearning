@@ -23,7 +23,7 @@ root.render(
     <BrowserRouter>
     {/* <App /> */}
     <Navbar/>
-    <ScrollThrough/>
+    {/* <ScrollThrough/> */}
 
     <Routes>
       <Route path="/" element={<App />} />

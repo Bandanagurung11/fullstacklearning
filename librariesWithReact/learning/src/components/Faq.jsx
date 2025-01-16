@@ -1,14 +1,14 @@
 import React from "react";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
-  AccordionItemPanel,
-} from "react-accessible-accordion";
+// import {
+//   Accordion,
+//   AccordionItem,
+//   AccordionItemHeading,
+//   AccordionItemButton,
+//   AccordionItemPanel,
+// } from "react-accessible-accordion";
 
 // Demo styles, see 'Styles' section below for some notes on use.
-import "react-accessible-accordion/dist/fancy-example.css";
+// import "react-accessible-accordion/dist/fancy-example.css";
 
 export default function Faq() {
   return (
@@ -21,7 +21,7 @@ export default function Faq() {
           Frequently asked <span className="text-orange-400">Questions</span>
         </p>
       </div>
-      <Accordion className="">
+      {/* <Accordion className="">
         <AccordionItem>
           <AccordionItemHeading>
             <AccordionItemButton>
@@ -111,7 +111,7 @@ export default function Faq() {
             </p>
           </AccordionItemPanel>
         </AccordionItem>
-      </Accordion>
+      </Accordion> */}
     </div>
   );
 }
