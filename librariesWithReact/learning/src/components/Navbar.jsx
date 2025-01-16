@@ -22,7 +22,7 @@ export default function Navbar() {
           <img className=" h-10" src={logo} alt="" />
           </Link>
 
-          <div className="hidden lg:block">
+          <div>
             <div className="flex gap-10 font-semibold ">
               <Link to="/" className=" hover:text-orange-500 duration-300 cursor-pointer ">
                 Home
@@ -38,6 +38,12 @@ export default function Navbar() {
               </Link>
               <Link to="/Pricing" className=" hover:text-orange-500 duration-300 cursor-pointer  ">
                 Price
+              </Link>
+              <Link to="/blogs" className=" hover:text-orange-500 duration-300 cursor-pointer  ">
+                Blogs
+              </Link>
+              <Link to="/users" className=" hover:text-orange-500 duration-300 cursor-pointer  ">
+              Users
               </Link>
             </div>
           </div>

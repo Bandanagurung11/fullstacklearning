@@ -13,6 +13,8 @@ import Footer from './components/Footer';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import ScrollThrough from './components/ScrollThrough';
+import Blogs from './pages/Blogs';
+import Users from './pages/Users';
 // import Footer2 from './components/Footer2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -31,6 +33,10 @@ root.render(
       Service />} />
       <Route path="/Pricing" element={<Pricing />} />
       <Route path="/Login" element={<Login />} />
+      <Route path="/blogs" element={<Blogs />} />
+      <Route path="/users" element={<Users />} />
+
+
 
     </Routes>
     <Footer/>
