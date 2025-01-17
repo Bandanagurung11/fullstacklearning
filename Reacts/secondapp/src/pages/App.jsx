@@ -8,15 +8,15 @@ import shopify from "../assets/images/shopify.svg";
 import spotify from "../assets/images/spotify.svg";
 import paypal from "../assets/images/paypal.svg";
 
-import Navbar from "./Navbar";
-import HeroSection from "./HeroSection";
-import EasyHandlingSection from "./EasyHandlingSection";
-import StructureSection from "./StructureSection";
-import Performance from "./Performance";
-import PeopleJoin from "./PeopleJoin";
-import PricingSection from "./PricingSection";
-import Faq from "./Faq";
-import OfficeAddress from "./OfficeAddress";
+import Navbar from "../components/Navbar";
+import HeroSection from "../components/HeroSection";
+import EasyHandlingSection from "../components/EasyHandlingSection";
+import StructureSection from "../components/StructureSection";
+import Performance from "../components/Performance";
+import PeopleJoin from "../components/PeopleJoin";
+import PricingSection from "../components/PricingSection";
+import Faq from "../components/Faq";
+import OfficeAddress from "../components/OfficeAddress";
 
 export default function App() {
   return (
@@ -67,10 +67,10 @@ export default function App() {
         </div>
       </div>
 
-      <div className="bg-[#f2f0ec] py-20 space-y-48">
+      <div className="bg-[#f2f0ec] py-20 space-y-24 lg:space-y-44">
         {/* five logo section */}
-        <div className="w-10/12 mx-auto grid grid-cols-3 lg:grid-cols-6 space-x-16 ">
-          <img className="h-8" src={amazon} alt="amazon-logo" />
+        <div className="w-full lg:w-10/12 mx-auto grid grid-cols-3 lg:grid-cols-6 lg:space-x-16 ">
+          <img className="h-8 mx-auto" src={amazon} alt="amazon-logo" />
           <img className="h-8" src={google} alt="google-logo" />
           <img className="h-8" src={lenovo} alt="lenovo-logo" />
           <img className="h-8" src={paypal} alt="paypal-logo" />

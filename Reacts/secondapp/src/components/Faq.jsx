@@ -2,28 +2,28 @@ import React from 'react'
 
 export default function Faq() {
   return (
-    <div className="bg-orange-50/50 py-20">
-        <div className="w-10/12 mx-auto flex flex-col gap-20">
-          <div className="leading-loose">
-            <p className="text-center text-orange-400 font-bold">
+    <div className="bg-white py-20">
+        <div className="w-10/12 mx-auto flex flex-col gap-24">
+          <div className="leading-loose space-y-4">
+            <p className="text-center text-orange-400 text-lg font-bold">
               NEED SUPPORT
             </p>
-            <p className="text-center text-4xl">
+            <p className="text-center text-4xl font-bold">
               Frequently asked{" "}
               <span className="text-orange-400">Questions</span>
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-20">
+          <div className="grid lg:grid-cols-2 gap-20">
             {/* left */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-12">
               <div className="flex flex-col">
                 <div className="flex gap-2">
                   <svg
-                    className="bg-cyan-100/50 border rounded-full"
+                    className="bg-[#e7fcfe] border rounded-full"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="32"
+                    height="32"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -35,7 +35,7 @@ export default function Faq() {
                       d="M12.438 17V7L9 9.5"
                     />
                   </svg>
-                  <p className="text-lg">
+                  <p className="text-xl">
                     How Benefit That I Got When Choose Basic Plan
                   </p>
                 </div>
@@ -52,8 +52,8 @@ export default function Faq() {
                   <svg
                     className="bg-cyan-100/50 border rounded-full"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="32"
+                    height="32"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -65,7 +65,7 @@ export default function Faq() {
                       d="M8.75 9.92c0-3.894 5.77-3.894 5.77 0c0 2.94-3.77 5.476-5.77 7.08c0 0 3.75-.625 6.25 0"
                     />
                   </svg>
-                  <p className="text-lg">How Do I Organize My Notes?</p>
+                  <p className="text-xl">How Do I Organize My Notes?</p>
                 </div>
                 <p className="opacity-60 pl-7 mt-2">
                   Try using coloured paper so that all related notes are <br />{" "}
@@ -80,8 +80,8 @@ export default function Faq() {
                   <svg
                     className="bg-cyan-100/50 border rounded-full"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="32"
+                    height="32"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -93,7 +93,7 @@ export default function Faq() {
                       d="M8.75 9.493c0-3.324 6.25-3.324 6.25 0c0 0 0 2.507-3.125 2.507C15 12 15 14.507 15 14.507c0 3.324-6.25 3.324-6.25 0"
                     />
                   </svg>
-                  <p className="text-lg">How Long For A Standard Project</p>
+                  <p className="text-xl">How Long For A Standard Project</p>
                 </div>
                 <p className="opacity-60 pl-7 mt-2">
                   Typically, an average project will take in the region of{" "}
@@ -106,14 +106,14 @@ export default function Faq() {
             </div>
 
             {/* right */}
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-col">
+            <div className="flex flex-col gap-12 items-center">
+              <div className="flex flex-col ">
                 <div className="flex gap-2">
                   <svg
                     className="bg-cyan-100/50 border rounded-full"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="32"
+                    height="32"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -125,7 +125,7 @@ export default function Faq() {
                       d="M12.917 7c-1.042 3.75-4.167 6.875-4.167 6.875H15M13.438 17v-5"
                     />
                   </svg>
-                  <p className="text-lg">
+                  <p className="text-xl">
                     How Do I Change My Email or Password?
                   </p>
                 </div>
@@ -141,8 +141,8 @@ export default function Faq() {
                   <svg
                     className="bg-cyan-100/50 border rounded-full"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="32"
+                    height="32"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -154,7 +154,7 @@ export default function Faq() {
                       d="M14.375 7c-2.5.625-5.625 0-5.625 0v3.566h3.473c1.534 0 2.777 1.064 2.777 2.377v1.399c0 3.522-6.25 3.566-6.25 0"
                     />
                   </svg>
-                  <p className="text-lg">Can I Lock My Note App?</p>
+                  <p className="text-xl">Can I Lock My Note App?</p>
                 </div>
                 <p className="opacity-60 pl-7 mt-2">
                   Through the collaboration with customers in <br /> discussing
@@ -164,13 +164,13 @@ export default function Faq() {
                 </p>
               </div>
 
-              <div>
+              <div className='flex flex-col items-center'>
                 <div className="flex gap-2">
                   <svg
                     className="bg-cyan-100/50 border rounded-full"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="32"
+                    height="32"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -182,9 +182,9 @@ export default function Faq() {
                       d="M13.75 7H12.5a3.75 3.75 0 0 0-3.75 3.75v3.125m0 0a3.125 3.125 0 1 0 6.25 0c0-1.726-1.4-2.5-3.125-2.5s-3.125.774-3.125 2.5"
                     />
                   </svg>
-                  <p className="text-lg">
+                  <p className="text-xl">
                     {" "}
-                    Can My Premium License Be Used For All Devices?
+                    Can My Premium License Be Used For All <br /> Devices?
                   </p>
                 </div>
                 <p className="opacity-60 pl-7 mt-2">

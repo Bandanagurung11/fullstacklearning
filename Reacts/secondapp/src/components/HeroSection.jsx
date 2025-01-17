@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function HeroSection() {
   return (
-    <div className=" lg:w-8/12 mx-auto mt-24 flex flex-col gap-9 items-center">
-              <h1 className=" text-2xl lg:text-6xl text-[#0b363d] text-center font-bold leading-loose">
-                Make Your Business Flourish with{" "}
-                <span className=" text-orange-500">Digital Marketing</span>
+    <div className="w-full lg:w-8/12 mx-auto mt-24 flex flex-col gap-9 items-center">
+              <h1 className=" leading-loose lg:leading-relaxed text-2xl lg:text-6xl text-[#0b363d] text-center font-bold ">
+                Make Your Business Flourish with {" "}
+                <span className=" text-orange-500 mt-8">Digital Marketing</span>
               </h1>
               <p className=" text-center opacity-60">
                 Save time on creating a website from scratch. Use a rich collection

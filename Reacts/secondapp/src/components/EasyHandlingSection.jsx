@@ -2,11 +2,11 @@ import React from 'react'
 
 export default function EasyHandlingSection() {
   return (
-    <div className="w-10/12 mx-auto grid grid-cols-2 gap-6 my-20">
+    <div className=" w-full lg:w-10/12 mx-auto grid lg:grid-cols-2 gap-6">
               {/* left section */}
               <div className="flex flex-col gap-20">
-                <div>
-                  <p className="text-orange-400 text-base font-bold">
+                <div className='pl-8 lg:pl-0'>
+                  <p className="text-orange-400  text-base font-bold">
                     EASY HANDLING
                   </p>
                   <p className="text-4xl font-bold leading-relaxed">
@@ -18,7 +18,7 @@ export default function EasyHandlingSection() {
                 {/* two cards section */}
                 <div className="grid grid-cols-2 gap-6">
                   {/* first card */}
-                  <div className="bg-[#fff9f5] px-6 py-8 flex flex-col gap-8 rounded-2xl">
+                  <div className="bg-[#ede4df] shadow-md px-6 py-8 flex flex-col gap-8 rounded-2xl">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="60"
@@ -49,7 +49,7 @@ export default function EasyHandlingSection() {
                   </div>
     
                   {/* second */}
-                  <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
+                  <div className="bg-[#ede4df] shadow-md  px-6 py-8 flex flex-col gap-8 rounded-2xl">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="40"
@@ -93,7 +93,7 @@ export default function EasyHandlingSection() {
               <div>
                 {/* upper two cards */}
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
+                  <div className="bg-[#ede4df] shadow-md  px-6 py-8 flex flex-col gap-8 rounded-2xl">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="60"
@@ -125,7 +125,7 @@ export default function EasyHandlingSection() {
                     </div>
                   </div>
     
-                  <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
+                  <div className="bg-[#ede4df] shadow-md  px-6 py-8 flex flex-col gap-8 rounded-2xl">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="60"
@@ -158,7 +158,7 @@ export default function EasyHandlingSection() {
     
                 {/* lower two cards */}
                 <div className="grid grid-cols-2 gap-6 mt-4">
-                  <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
+                  <div className="bg-[#ede4df] shadow-md  px-6 py-8 flex flex-col gap-8 rounded-2xl">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="60"
@@ -188,7 +188,7 @@ export default function EasyHandlingSection() {
                     </div>
                   </div>
     
-                  <div className="bg-orange-100 px-6 py-8 flex flex-col gap-8 rounded-2xl">
+                  <div className="bg-[#ede4df] shadow-md  px-6 py-8 flex flex-col gap-8 rounded-2xl">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="60"

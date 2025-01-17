@@ -3,7 +3,7 @@ import React from 'react'
 export default function Navbar() {
   return (
     <nav className=" bg-slate-700 py-2">
-              <div className="flex items-center justify-between text-white p-2 md:w-9/12 lg:w-11/12 mx-auto">
+              <div className="flex items-center justify-between text-white p-2 w-full md:w-9/12 lg:w-11/12 mx-auto">
                 <div className="flex gap-2 items-center">
                   {/* <img src={logo} alt="logoimage" className="bg-transparent block text-white"   /> */}
                   <svg

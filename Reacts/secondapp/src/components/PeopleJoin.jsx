@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function PeopleJoin() {
   return (
-    <div className=" bg-slate-700 py-6 ">
+    <div className=" bg-[#0b363d] pt-14 ">
         <div className=" w-10/12  mx-auto grid grid-cols-2 lg:grid-cols-4 gap-16">
-          <div className=" space-y-6 flex flex-col items-center gap-6">
-            <div className="bg-blue-100 p-4 rounded-lg">
+          <div className=" flex flex-col items-center gap-12">
+            <div className="bg-[#a4beb8] p-4 rounded-lg">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -20,14 +20,14 @@ export default function PeopleJoin() {
             </div>
             <p className="text-white text-4xl font-bold">
               100,000+ <br />{" "}
-              <span className=" text-gray-400 text-base">
+              <span className=" text-[#a4beb8] text-base">
                 No. of People Join
               </span>
             </p>
           </div>
 
-          <div className=" space-y-6 flex flex-col items-center gap-6">
-            <div className="bg-blue-100 p-4 rounded-lg">
+          <div className=" flex flex-col items-center gap-12">
+            <div className="bg-[#a4beb8] p-4 rounded-lg">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -42,14 +42,14 @@ export default function PeopleJoin() {
             </div>
             <p className="text-white text-4xl font-bold text-center">
               120+ <br />
-              <span className=" text-gray-400 text-base">
+              <span className=" text-[#a4beb8] text-base">
                 Countries Reached
               </span>
             </p>
           </div>
 
-          <div className=" space-y-6 flex flex-col items-center gap-6">
-            <div className="bg-blue-100 p-4 rounded-lg">
+          <div className=" flex flex-col items-center gap-12">
+            <div className="bg-[#a4beb8] p-4 rounded-lg">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -64,14 +64,14 @@ export default function PeopleJoin() {
             </div>
             <p className="text-white text-4xl font-bold">
               425,000+ <br />
-              <span className=" text-gray-400 text-base">
+              <span className=" text-[#a4beb8] text-base">
                 No. of Sessions Given
               </span>
             </p>
           </div>
 
-          <div className=" space-y-6 flex flex-col items-center gap-6">
-            <div className="bg-blue-100 p-4 rounded-lg">
+          <div className=" flex flex-col items-center gap-12">
+            <div className="bg-[#a4beb8] p-4 rounded-lg">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -86,7 +86,7 @@ export default function PeopleJoin() {
             </div>
             <p className="text-white text-4xl font-bold text-center">
               500K <br />{" "}
-              <span className=" text-gray-400 text-base">Hour of work</span>
+              <span className=" text-[#a4beb8] text-base">Hour of work</span>
             </p>
             <p></p>
           </div>
