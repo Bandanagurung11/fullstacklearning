@@ -1,4 +1,8 @@
 import React from 'react'
+import AnchorLink from 'react-anchor-link-smooth-scroll' //you have to download a package and this is for a smooth 
+import { Link } from 'react-router'
+
+//scrolling when someone click on pricing section smooth go to the pricing section
 
 export default function Navbar() {
   return (
@@ -26,22 +30,26 @@ export default function Navbar() {
                   <div className="flex gap-10 font-semibold">
                     <p className=" cursor-pointer text-orange-600">Home</p>
                     <p className=" hover:text-orange-500 duration-300 cursor-pointer">
-                      About
+                      <AnchorLink href='#about'>About</AnchorLink>
                     </p>
                     <p className=" hover:text-orange-500 duration-300 cursor-pointer">
-                      Services
+                      <AnchorLink href='#service'>Service</AnchorLink>
                     </p>
                     <p className=" hover:text-orange-500 duration-300 cursor-pointer">
-                      Price
+                       <AnchorLink href='#price'>Price</AnchorLink>
                     </p>
                     <p className=" hover:text-orange-500 duration-300 cursor-pointer">
-                      Contacts
+                    <AnchorLink href='#contacts'>Contacts</AnchorLink>
                     </p>
                   </div>
                 </div>
-                <button className=" bg-orange-600 pl-8 pr-8 pt-2 pb-2 font-semibold rounded-md">
+                <Link to="LoginPage">
+                <button className=" bg-orange-600 pl-8 pr-8 pt-2 pb-2 font-semibold rounded-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-700 ease-in-out">
                   Login
                 </button>
+                </Link>
+               
+                
               </div>
             </nav>
   )

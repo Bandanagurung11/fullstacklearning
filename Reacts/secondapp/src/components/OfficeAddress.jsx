@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function OfficeAddress() {
   return (
-    <div className="bg-[#fff9f5]">
+    <div id='contacts' className="bg-[#fff9f5]">
             <div className="  w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 py-10">
               <div className="flex items-center gap-4 bg-white p-6 rounded-md">
                 <svg

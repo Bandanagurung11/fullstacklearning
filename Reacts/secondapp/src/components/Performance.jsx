@@ -3,7 +3,7 @@ import dashboard2 from "../assets/images/dashbord-4.png";
 
 export default function Performance() {
   return (
-    <div className="bg-orange-50/50 py-16">
+    <div id='service' className="bg-orange-50/50 py-16">
         <div className=" w-10/12 mx-auto grid lg:grid-cols-2 gap-20">
           {/* left section */}
           <div>

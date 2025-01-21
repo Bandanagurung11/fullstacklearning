@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from "react-router";
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import LoginPage from './pages/LoginPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,8 +15,10 @@ root.render(
     
     <Routes>
       <Route path="/" element={<App />} />
+      <Route path="/loginpage" element={<LoginPage />} />
+
     </Routes>
-    <Footer/>
+   
   </BrowserRouter>
   </React.StrictMode>
 );

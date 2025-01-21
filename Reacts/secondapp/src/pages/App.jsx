@@ -17,12 +17,13 @@ import PeopleJoin from "../components/PeopleJoin";
 import PricingSection from "../components/PricingSection";
 import Faq from "../components/Faq";
 import OfficeAddress from "../components/OfficeAddress";
+import Footer from "../components/Footer";
 
 export default function App() {
   return (
     <div>
       {/* ? bg-[#000000] - it's not use much though for using color properties */}
-      <div className="bg-[url('./assets/images/banner-2.jpg')] ">
+      <div className="bg-[url('./assets/images/banner-2.jpg')] top-0 ">
         {/* navbar */}
         <Navbar />
 
@@ -99,6 +100,7 @@ export default function App() {
 
       {/* office address */}
       <OfficeAddress />
+       <Footer/>
     </div>
   );
 }

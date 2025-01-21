@@ -142,7 +142,7 @@ export default function PricingSection() {
   ];
 
   return (
-    <div className=" bg-[#fff9f5]  py-8 lg:py-24 ">
+    <div id="price" className=" bg-[#fff9f5]  py-8 lg:py-24 ">
       {/* pricing section */}
       <div className=" lg:w-10/12 mx-auto flex flex-col items-center space-y-12">
         {/* first child */}

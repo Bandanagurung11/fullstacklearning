@@ -14,10 +14,10 @@ export default function HeroSection() {
                 readable English.
               </p>
               <div className=" space-x-4 lg:space-x-8">
-                <button className=" bg-slate-800 text-white p-4 lg:px-8 rounded-md lg:py-3">
+                <button className=" bg-slate-800 text-white p-4 lg:px-8 rounded-md lg:py-3 hover:shadow-2xl hover:-translate-y-1 transition duration-700 ease-in-out">
                   Try 30 Days Trial
                 </button>
-                <button className=" border border-slate-800 rounded-md p-4 lg:px-8 lg:py-3 ">
+                <button className=" border border-slate-800 rounded-md p-4 lg:px-8 lg:py-3  hover:shadow-2xl hover:-translate-y-1 transition duration-700 ease-in-out ">
                   Schedule a call
                 </button>
               </div>

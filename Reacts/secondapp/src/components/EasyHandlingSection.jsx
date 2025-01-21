@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function EasyHandlingSection() {
   return (
-    <div className=" w-full lg:w-10/12 mx-auto grid lg:grid-cols-2 gap-6">
+    <div id='about' className=" w-full lg:w-10/12 mx-auto grid lg:grid-cols-2 gap-6">
               {/* left section */}
               <div className="flex flex-col gap-20">
                 <div className='pl-8 lg:pl-0'>

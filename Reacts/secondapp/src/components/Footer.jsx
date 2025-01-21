@@ -1,90 +1,89 @@
 import React from "react";
 
 export default function Footer() {
-
   const company = [
     {
-      id : 1,
-      title : "Company Profile",
+      id: 1,
+      title: "Company Profile",
     },
     {
-      id : 2,
-      title : "Help Center",
-    }, 
-    {
-      id : 3,
-      title : "Services",
-    }, 
-    {
-      id : 4,
-      title : "Plans & Pricing",
+      id: 2,
+      title: "Help Center",
     },
-     {
-      id : 5,
-      title : "Team Members",
+    {
+      id: 3,
+      title: "Services",
     },
-     {
-      id : 6,
-      title : "Contact",
+    {
+      id: 4,
+      title: "Plans & Pricing",
+    },
+    {
+      id: 5,
+      title: "Team Members",
+    },
+    {
+      id: 6,
+      title: "Contact",
     },
   ];
 
   const community = [
     {
-      id : 1,
-      title : "Career",
+      id: 1,
+      title: "Career",
     },
     {
-      id : 2,
-      title : "Leadership",
-    }, 
-    {
-      id : 3,
-      title : "Press & Media",
-    },
-     {
-      id : 4,
-      title : "Projects",
-    },
-     {
-      id : 5,
-      title : "Marketing Services",
+      id: 2,
+      title: "Leadership",
     },
     {
-      id : 6,
-      title : "Challenge Of Project",
+      id: 3,
+      title: "Press & Media",
+    },
+    {
+      id: 4,
+      title: "Projects",
+    },
+    {
+      id: 5,
+      title: "Marketing Services",
+    },
+    {
+      id: 6,
+      title: "Challenge Of Project",
     },
   ];
 
   const Solution = [
     {
-      id : 1,
-      title : "Small Business",
+      id: 1,
+      title: "Small Business",
     },
     {
-      id : 2,
-      title : "Ebook Library",
-    }, 
-    {
-      id : 3,
-      title : "Free Theme",
-    },
-     {
-      id : 4,
-      title : "Affiliates",
-    },
-     {
-      id : 5,
-      title : "Testimonial",
+      id: 2,
+      title: "Ebook Library",
     },
     {
-      id : 6,
-      title : "Themes",
+      id: 3,
+      title: "Free Theme",
+    },
+    {
+      id: 4,
+      title: "Affiliates",
+    },
+    {
+      id: 5,
+      title: "Testimonial",
+    },
+    {
+      id: 6,
+      title: "Themes",
     },
   ];
   return (
     <div className="bg-[#031c1f]">
-      <div className=" w-11/12 mx-auto grid  lg:grid-cols-5 gap-4 py-10">
+      <div className=" w-11/12 mx-auto grid  lg:grid-cols-5 gap-12 py-10">
         <div className="flex flex-col gap-6 col-span-2">
           <div className="flex gap-2 items-center">
             {/* <img src={logo} alt="logoimage" className="bg-transparent block text-white"   /> */}
@@ -122,17 +121,38 @@ export default function Footer() {
                 color="currentColor"
               />
             </svg>
-            <p className="opacity-80 text-[#839699]">
+            <p className="opacity-80 text-[#839699] text-lg">
               Greater pleasures el esndures pains avoid <br /> welcomed avoided
               pariatu.
             </p>
           </div>
-          <p className="text-white">Subscribe to our Site :</p>
-          <input
-            className="h-8 w-60 bg-slate-400"
-            type="text"
-            placeholder="enter email"
-          />
+          <p className="text-white text-xl">Subscribe to our Site :</p>
+          <div className="relative">
+            <input
+              className="h-10 pl-2 w-60"
+              type="text"
+              placeholder="enter email"
+            />
+            <svg
+              className="absolute -top-2 right-32 lg:right-48 cursor-pointer "
+              xmlns="http://www.w3.org/2000/svg"
+              width="60"
+              height="60"
+              viewBox="0 0 21 21"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                stroke="orange"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m4.494 5.535l12-.038a2 2 0 0 1 2 1.845l.006.155V13.5a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V7.535a2 2 0 0 1 1.994-2" />
+                <path fill="currentColor" d="m9.5 12.5l3-2l-3-2z" />
+              </g>
+            </svg>
+          </div>
+
           <p className="text-[#839699]">
             © 2025 Loxcy - Created By{" "}
             <span className="text-white text-lg">Themesdesign</span>
@@ -140,41 +160,31 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <p className="text-white "> Company :</p>
-          
-          {
-            company.map((item, index)=>(
-              <div>
-                <p className="text-[#839699]">{item.title}</p>
-              </div>
+          <p className="text-white text-xl "> Company :</p>
 
-            ))
-          }
-      
+          {company.map((item, index) => (
+            <div>
+              <p className="text-[#839699] text-lg hover:text-white hover:translate-x-2 transition ease-in-out duration-500 cursor-pointer">{item.title}</p>
+            </div>
+          ))}
         </div>
 
         <div className="flex flex-col gap-4">
-          <p className="text-white">Community :</p>
-          {
-            community.map((item, index)=>(
-              <div>
-                <p className="text-[#839699]">{item.title}</p>
-              </div>
-
-            ))
-          }
+          <p className="text-white text-xl">Community :</p>
+          {community.map((item, index) => (
+            <div>
+              <p className="text-[#839699] text-lg hover:text-white hover:translate-x-2 transition ease-in-out duration-500 cursor-pointer">{item.title}</p>
+            </div>
+          ))}
         </div>
 
         <div className="flex flex-col gap-4">
-          <p className="text-white">Solution : </p>
-          {
-            Solution.map((item, index)=>(
-              <div>
-                <p className="text-[#839699]">{item.title}</p>
-              </div>
-
-            ))
-          }
+          <p className="text-white text-xl">Solution : </p>
+          {Solution.map((item, index) => (
+            <div>
+              <p className="text-[#839699] text-lg hover:text-white hover:translate-x-2 transition ease-in-out duration-500 cursor-pointer">{item.title}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

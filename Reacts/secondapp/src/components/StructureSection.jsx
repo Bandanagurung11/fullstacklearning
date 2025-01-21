@@ -89,7 +89,7 @@ export default function StructureSection() {
                   </div>
                 </div>
                 <div>
-                <button className="border rounded-md py-2 px-6 bg-slate-700 text-white shadow-xl ">
+                <button className="border rounded-md py-2 px-6 bg-slate-700 text-white shadow-xl hover:-translate-y-1 hover:shadow-2xl transition ease-in-out duration-700 ">
                   All categories
                 </button>
                 </div>
