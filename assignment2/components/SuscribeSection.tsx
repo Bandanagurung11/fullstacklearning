@@ -42,7 +42,7 @@ export default function SuscribeSection() {
     },
   ];
   return (
-    <div className="grid grid-cols-6 gap-12 px-4 pb-16 ">
+    <div className="grid lg:grid-cols-6 gap-12 px-4 pb-16 ">
       <div className="bg-[#3D61FF] shadow-md px-2 py-12 rounded-lg space-y-12 col-span-2">
         <div className="flex gap-2 items-center justify-center">
           <svg
