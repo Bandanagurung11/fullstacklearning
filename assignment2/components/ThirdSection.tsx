@@ -57,7 +57,7 @@ export default function ThirdSection() {
     <div>
       <div className="pt-24 pb-16 space-y-12 px-4">
         <div className="flex items-center justify-center gap-2">
-          <p className="text-3xl">
+          <p className=" lg:text-3xl">
             Trusted by{" "}
             <span className="bg-[#F1EBE7] text-[#CD9217] py-2 px-1">
               businesses
@@ -100,7 +100,7 @@ export default function ThirdSection() {
           </svg>
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid  grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="rounded-xl shadow-md cursor-pointer ">
             <Image className="rounded-t-xl" src={dash} alt="thisisimage" />
             <div className="flex gap-2 justify-center items-center py-1">
@@ -210,13 +210,10 @@ export default function ThirdSection() {
           </div>
         </div>
       </div>
-
-
-
-
+{/* next sedction */}
       <div className="space-y-6">
       <div className="flex gap-2 items-center justify-center">
-        <p className="text-3xl">
+        <p className=" text-sm lg:text-3xl">
           Unlock your{" "}
           <span className="bg-[#E7EDEA] text-[#27AA57] p-1">e-commerce</span>{" "}
           potential with{" "}
@@ -591,7 +588,7 @@ export default function ThirdSection() {
       </div>
 
 
-      <div className="grid grid-cols-3 p-4 gap-6">
+      <div className="grid lg:grid-cols-3 p-4 gap-6">
         {
         ImageDescription.map((each, index) => (
           <div key={index} className="rounded-xl p-6 shadow-lg space-y-6">

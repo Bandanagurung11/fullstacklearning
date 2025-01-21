@@ -1,7 +1,10 @@
 import Faq from '@/components/Faq'
+import Footer from '@/components/Footer'
+import HelpSection from '@/components/HelpSection'
 import HeroSection from '@/components/HeroSection'
 import Navbar from '@/components/Navbar'
 import Pricing from '@/components/Pricing'
+import SuscribeSection from '@/components/SuscribeSection'
 import ThirdSection from '@/components/ThirdSection'
 
 import React from 'react'
@@ -21,6 +24,9 @@ export default function page() {
      <ThirdSection/>
      <Faq/>
      <Pricing/>
+     <HelpSection/>
+     <SuscribeSection/>
+     <Footer/>
      
     </div>
   )

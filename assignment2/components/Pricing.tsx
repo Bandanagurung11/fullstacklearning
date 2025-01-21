@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 export default function Pricing() {
   return (
     <div className="space-y-12">
-      <p className="text-center text-3xl">
+      <p className="text-center text-lg lg:text-3xl">
         Affordable{" "}
         <span className="bg-[#E7EDEA] p-1 text-[#1CA34A]">pricing</span> for
         your <span className="bg-[#FDF7E6] text-[#CA8A04] p-1">business</span>
@@ -12,7 +12,7 @@ export default function Pricing() {
 
       <Tabs defaultValue="account" className="">
         <div className="flex justify-center">
-          <TabsList className="py-6 px-6 bg-[#D7D9E0]">
+          <TabsList className="lg:py-6 lg:px-6 bg-[#D7D9E0]">
             <TabsTrigger value="account" className="text-lg">
               Monthly
             </TabsTrigger>
@@ -22,8 +22,9 @@ export default function Pricing() {
           </TabsList>
         </div>
         <TabsContent value="account">
+          {/* for monthly */}
           <div className="p-4">
-          <div className="grid grid-cols-3 gap-8 px-2">
+          <div className="grid lg:grid-cols-3 gap-8 px-2">
             {/* first */}
             <div className=" bg-[#FCFCFC] shadow-lg space-y-12 p-4 rounded-xl ">
               <div className="space-y-3">
@@ -283,8 +284,10 @@ export default function Pricing() {
         </TabsContent>
         <TabsContent value="password">
 
+          {/* for yearly */}
+
         <div className="p-4">
-          <div className="grid grid-cols-3 gap-8 px-2">
+          <div className="grid lg:grid-cols-3 gap-8 px-2">
             {/* first */}
             <div className=" bg-[#FCFCFC] shadow-lg space-y-12 p-4 rounded-xl ">
               <div className="space-y-3">

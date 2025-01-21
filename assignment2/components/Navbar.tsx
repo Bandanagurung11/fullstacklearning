@@ -1,8 +1,10 @@
 import React from "react";
 
+
 export default function Navbar() {
   return (
-    <div className="flex justify-between bg-[#FFFFFF] border shadow-lg w-6/12 mx-auto p-2 rounded-2xl items-center fixed left-80 ">
+    <div className="flex justify-between bg-[#FFFFFF] border shadow-lg w-full lg:w-6/12 mx-auto p-2 rounded-2xl items-center lg:fixed lg:left-80 ">
+      
       <div className="flex gap-2 items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +25,7 @@ export default function Navbar() {
         <p className="text-[#3D61FF] font-bold ">Fenzora</p>
       </div>
 
-      <div className="flex gap-4 text-sm opacity-60 font-semibold">
+      <div className=" hidden lg:flex gap-4 text-sm opacity-60 font-semibold">
         <p className="hover:text-[#3f4cd3] cursor-pointer">About</p>
         <p className="hover:text-[#5070FF] cursor-pointer">Trusted By</p>
         <p className="hover:text-[#5070FF] cursor-pointer">Features</p>

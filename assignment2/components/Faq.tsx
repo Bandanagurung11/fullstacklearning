@@ -6,11 +6,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+
 export default function Faq() {
   return (
     <div className="py-16 space-y-12">
       <div className="flex gap-2 items-center justify-center">
-        <p className="text-3xl">
+        <p className="lg:text-3xl">
           <span className="bg-[#E8EBF3] p-1 text-[#2563EB]">Frequently</span>{" "}
           Asked{" "}
           <span className="bg-[#EEE8F3] text-[#9333EA] p-1"> Questions</span>
@@ -50,6 +51,7 @@ export default function Faq() {
                 </g>
               </svg>
               <p className="text-lg font-bold"> What does Fenzora offer?</p>
+              
             </div>
           </AccordionTrigger>
           <AccordionContent className="text-base opacity-60">

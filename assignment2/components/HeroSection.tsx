@@ -3,10 +3,10 @@ import React from "react";
 export default function HeroSection() {
   return (
     <div className=" pt-36 pb-16 space-y-12">
-      <p className="text-6xl text-center w-8/12 mx-auto">
+      <p className=" text-lg lg:text-6xl text-center lg:w-8/12 mx-auto">
         Take your business online with personalized e-commerce solution
       </p>
-      <p className="w-6/12 mx-auto text-center">
+      <p className="lg:w-6/12 mx-auto text-center">
         Launch your online store in 60 seconds.{" "}
         <span className="bg-[#EEE8F3] shadow-sm px-2 py-1 rounded-full text-[#C79BEF]">
           Build
