@@ -36,10 +36,15 @@ const StudentTable = mongoose.model("StudentTable", StudendSchema);
 app.get("/Students", async (req, res) => {
   try {
     const response = await StudentTable.find();
-    return res.status(200).json(response);
+    console.log(response);
+    return res.status(200).json({
+      message : "all data fetch successfully",
+      data : response,
+    });
+    
   } catch (error) {
     console.log(
-      "Something went wrong while fetching data from students database"
+      "Something went wrong while fetching data from students database", error
     );
   }
 });
@@ -50,7 +55,10 @@ app.post("/Students", async (req, res) => {
     console.log(req.body);
     const newStudent = await new StudentTable(req.body).save();
     console.log(newStudent);
-    return res.status(200).json(newStudent);
+    return res.status(200).json({
+      message: "student create successfully",
+      data : newStudent,
+    });
     
   } catch (error) {
     console.log("Something went wrong",error);
@@ -58,17 +66,79 @@ app.post("/Students", async (req, res) => {
 });
 
 
-// student delete route
-app.delete("/Students", async(req, res)=>{
-    try {
-      const deletedStudent = await StudentTable.findByIdAndDelete(req.body.id)  
-      console.log(deletedStudent);
-    } catch (error) {
-        console.log("something went wrong, error");
+// student delete by body
+// app.delete("/Students", async(req, res)=>{
+//     try {
+//       const deletedStudent = await StudentTable.findByIdAndDelete({_id:req.body.id})  
+//       console.log("deleted student is:")
+//       console.log(deletedStudent);
+// res.status(200).json({
+//   message: "student deleted sucessfully",
+//   data : deletedStudent,
+//     })
+//    }
+//     catch (error) {
+//         console.log("something went wrong, error");
         
-    }
+//     }
+
+// });
+
+
+
+// Delete by params
+
+app.delete("/Students/:id", async(req, res)=>{
+  try {
+    const deletedStudent = await StudentTable.findByIdAndDelete({_id:req.params.id})  
+    console.log("deleted student is:")
+    console.log(deletedStudent);
+    res.status(200).json({
+      message: "student deleted sucessfully",
+      data : deletedStudent,
+    })
+  } catch (error) {
+      console.log("something went wrong, error");
+      
+  }
 
 });
+
+
+
+// get student by id
+app.get("/Students/:id", async(req, res)=>{
+  try {
+    const student = await StudentTable.findById({_id : req.params.id});
+    console.log("fetched student by id is:");
+    console.log(student);
+    return res.status(200).json(student);
+  } catch (error) {
+    
+    console.log("something went wrong", error)
+    
+  }
+})
+
+
+// update student by id
+app.put("/Students/:id", async (req, res)=>{
+  try {
+    const updateStudent = await StudentTable.findByIdAndUpdate({_id:req.params.id}, req.body, {new:true});
+    return res.status(200).json({
+      message : "student updated successfully",
+      data : updateStudent,
+    });
+  } catch (error) {
+    console.log("something went wrong", error);
+    
+  }
+})
+
+
+
+
+
 
 // test request to the server
 app.get("/test", (req, res) => {

@@ -19,8 +19,8 @@ export default function Blogs() {
   return (
     <div className="bg-[#ace7f7]">
       <div className="text-center space-y-6 py-12">
-        <p className="text-3xl font-bold">Blogs</p>
-        <p className="text-lg opacity-60 font-bold text-red">
+        <p className="text-3xl font-bold text-[#406ebd] tracking-widest">Blogs</p>
+        <p className="text-lg opacity-60 font-bold text-red text-[#406ebd]">
           All news about Blogi in one Place
         </p>
       </div>

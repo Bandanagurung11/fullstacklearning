@@ -16,9 +16,9 @@ export default function Users() {
   }, []);
 
   return (
-    <div className="bg-[#a5fff6]">
+    <div className="bg-[#a5fff6] pb-12">
         <div className="py-24">
-            <p className="text-center  text-6xl">Members Information</p>
+            <p className="text-center text-[#297580]  text-6xl">Members Information</p>
         </div>
       <div className="w-10/12 mx-auto grid grid-cols-3 gap-8">
         {users?.map((user, index) => (
