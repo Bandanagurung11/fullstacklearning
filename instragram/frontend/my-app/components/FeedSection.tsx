@@ -1,10 +1,13 @@
 "use client"
+import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
-import { Heart, MessageCircleMore, MoreHorizontal, Share } from "lucide-react";
+import { Heart, MessageCircleMore, Share, Trash } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export default function FeedSection() {
+  const { toast } = useToast()
+
 
   const [posts, setPosts] = useState([]);
 
@@ -21,6 +24,27 @@ export default function FeedSection() {
   useEffect(() => {
     fetchPosts();
   }, []);
+
+  const handleDeletePost = async (_id) => {
+    try {
+      // run delete function backend ko
+      const response = await axios.delete(`http://localhost:4000/posts/${_id}`);
+      console.log(response);
+      toast({
+        title: "Post Deleted",
+        description: "Friday, February 10, 2023 at 5:57 PM",
+      })
+      fetchPosts();
+      // window.location.reload(); this is tradtional way not use much though
+    } catch (error) {
+      console.log("Delete Failed", error);
+      toast({
+        title: "Post deletion failed",
+        description: "Friday, February 10, 2023 at 5:57 PM",
+      })
+    }
+  };
+
 
 
   // const posts = [
@@ -117,7 +141,7 @@ export default function FeedSection() {
               <p>Loki Chaulagain</p>
             </div>
 
-            <MoreHorizontal />
+            <Trash onClick={()=>handleDeletePost(post._id)} />
           </div>
 
           <Image
