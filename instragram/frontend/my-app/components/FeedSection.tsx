@@ -1,8 +1,9 @@
 "use client"
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
-import { Heart, MessageCircleMore, Share, Trash } from "lucide-react";
+import { Eye, FilePenLine, Heart, MessageCircleMore, Share, Trash } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 export default function FeedSection() {
@@ -140,6 +141,15 @@ export default function FeedSection() {
               />
               <p>Loki Chaulagain</p>
             </div>
+
+
+            <Link href={`/post/view/${post._id}`}>
+            <Eye/>
+            </Link>
+            <Link href={`post/${post._id}`}>
+            <FilePenLine />
+            </Link>
+            
 
             <Trash onClick={()=>handleDeletePost(post._id)} />
           </div>
