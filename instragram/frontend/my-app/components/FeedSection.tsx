@@ -5,11 +5,23 @@ import { Eye, FilePenLine, Heart, MessageCircleMore, Share, Trash } from "lucide
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+
+interface IPost {
+  _id: string;
+  image: string;
+  title: string;
+  likeCount: number;
+  comments: [
+    {
+      commentMessage: string;
+    }
+  ];
+}
 
 export default function FeedSection() {
   const { toast } = useToast()
-
-
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {
@@ -26,10 +38,10 @@ export default function FeedSection() {
     fetchPosts();
   }, []);
 
-  const handleDeletePost = async (_id) => {
+  const handleDeletePost = async (_id:string) => {
     try {
       // run delete function backend ko
-      const response = await axios.delete(`http://localhost:4000/posts/${_id}`);
+      const response = await axios.delete(`http://localhost:4000/Posts/${_id}`);
       console.log(response);
       toast({
         title: "Post Deleted",
@@ -41,12 +53,57 @@ export default function FeedSection() {
       console.log("Delete Failed", error);
       toast({
         title: "Post deletion failed",
-        description: "Friday, February 10, 2023 at 5:57 PM",
       })
+    }
+
+    
+  };
+
+  const handleLikePost= async (_id : string)=>{
+    try {
+      const response = await axios.patch(`http://localhost:4000/Posts/${_id}`,{
+        $inc : {likeCount :1},
+      })
+      console.log("this is response", response.data)
+    } catch (error) {
+      console.log("something went wrong", error);
+      toast({
+        title : "liked failed"
+      })
+    }
+    fetchPosts();
+  }
+
+
+  //  For Comment------------------------->
+  const [commentText, setCommentText] = useState("");
+  console.log(commentText, "this is comment text");
+
+  const handlePostAComment = async (e,_id: string) => {
+    e.preventDefault()
+  
+    const respose = await axios.patch(`http://localhost:4000/Posts/${_id}`, {
+      $push: { comments: { commentMessage: commentText } },
+    });
+
+    fetchPosts();
+    setCommentText("");
+    console.log(respose, "This is comment response");
+    try {
+    } catch (error) {
+      toast({
+        title: "Comment Failed",
+      });
+      console.log("Comment Failed", error);
     }
   };
 
-
+   // Show comments handler ---------------------------------->
+   const [showComment, setShowComment] = useState(false);
+   const [currentCommentWalaId, setcurrentCommentWalaId] = useState();
+   console.log(showComment, "this is show comment");
+   console.log(currentCommentWalaId, "this is current comment");
+ 
 
   // const posts = [
   //   {
@@ -126,7 +183,7 @@ export default function FeedSection() {
   // ];
   return (
     <div className=" space-y-8">
-      {posts?.map((post, index) => (
+      {posts?.map((post :IPost, index :number) => (
         <div
           key={index}
           className=" space-y-4">
@@ -163,11 +220,38 @@ export default function FeedSection() {
           />
 
           <div className=" flex items-center gap-4">
-            <Heart />
-            <MessageCircleMore />
+            <Heart onClick={() => handleLikePost(post._id)} />
+            {post.likeCount}
+            <MessageCircleMore
+              onClick={() => {
+                setShowComment(!showComment);
+                setcurrentCommentWalaId(post._id);
+              }}
+            />{" "}
+            {post.comments.length}
             <Share />
           </div>
           <p>{post.title}</p>
+
+          <form onSubmit={(e)=>handlePostAComment(e,post._id)} className=" flex items-center gap-4">
+            <Input
+              value={commentText}
+              required={true}
+              onChange={(e) => setCommentText(e.target.value)}
+              placeholder="Add a comment"
+            />
+            <Button type="submit">Comment</Button>
+          </form>
+
+          {showComment === true && currentCommentWalaId === post._id && (
+            <div className=" bg-gray-200 p-4 rounded-lg border border-sky-200">
+              {post.comments.map((comment, index:number) => (
+                <p key={index}>{comment.commentMessage}</p>
+              ))}
+            </div>
+          )}
+
+
         </div>
       ))}
     </div>

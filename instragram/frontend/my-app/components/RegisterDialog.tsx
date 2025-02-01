@@ -10,27 +10,37 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { toast } from "@/hooks/use-toast";
 import axios from "axios";
 import { useState } from "react";
+
+
 
 export function RegisterDialog() {
   const [username, setUsername] = useState("");
   const [profilePicture, setProfilePicture] = useState("");
-  const createUser = async () => {
+  const createUser = async (e) => {
+    e.preventDefault();
     try {
       const response = await axios.post("http://localhost:4000/users", {
         username: username,
         profilePicture: profilePicture,
       });
+      console.log(response);
 
       if (response) {
         setUsername("");
         setProfilePicture("");
+        toast({
+          title: "user registered sucessfully"
+        })
       }
-
       console.log(response.data, "response");
     } catch (error) {
       console.log("Something went wrong", error);
+      toast({
+        title : "user couldn't be register"
+      })
     }
   };
 
