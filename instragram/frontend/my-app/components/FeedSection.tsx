@@ -203,7 +203,7 @@ export default function FeedSection() {
             <Link href={`/post/view/${post._id}`}>
             <Eye/>
             </Link>
-            <Link href={`post/${post._id}`}>
+            <Link href={`post/edit/${post._id}`}>
             <FilePenLine />
             </Link>
             

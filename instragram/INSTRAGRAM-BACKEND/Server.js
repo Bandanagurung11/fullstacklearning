@@ -43,6 +43,10 @@ const User = mongoose.model("User", userSchema);
 
 // User route
 
+app.get("/", async (req, res)=>{
+  return res.send("server is running");
+})
+
 app.post("/users", async (req, res) => {
   try {
     const newUser = await new User(req.body).save();
