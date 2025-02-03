@@ -1,21 +1,26 @@
-import { Plus, SquareChevronLeft } from "lucide-react";
-import React from "react";
-import { Button } from "./ui/button";
+"use client"
+import { SquareChevronLeft } from "lucide-react";
+import React, { useState } from "react";
+
 import Image from "next/image";
 import { CreateFeed } from "./CreateFeed";
 
+
 export default function LeftSide() {
+  const [isOpen, setIsOpen] = useState(true);
+  console.log(isOpen)
   return (
-    <div className=" fixed h-screen border-r border-r-gray-300 mt-16   w-2/12 space-y-12">
+    <div className=" fixed h-screen border-r border-r-gray-300 mt-20   w-2/12 space-y-12">
       <div className="space-y-4 p-4">
         <div className="flex gap-24 justify-between">
           <p className="text-lg opacity-70">menu</p>
-          <SquareChevronLeft />
+          <div className=" p-1 rounded-xl hover:bg-gray-300 cursor-pointer">
+          <SquareChevronLeft onClick={()=>setIsOpen(!isOpen)} />
+          </div>
         </div>
-        <Button className="hover:shadow-2xl w-full">
-          <Plus />
-          New post
-        </Button>
+          
+          <CreateFeed />
+       
       </div>
 
       <div>
@@ -32,7 +37,7 @@ export default function LeftSide() {
             </div>
             <p>my feed</p>
           </div>
-          <CreateFeed />
+          
         </div>
       </div>
     </div>

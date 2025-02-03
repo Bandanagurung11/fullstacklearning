@@ -13,10 +13,14 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
 import axios from "axios";
+import { Plus } from "lucide-react"
 import { useState } from "react";
+
+
 
 export function CreateFeed() {
     const { toast } = useToast()
+    
 
     const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
@@ -49,13 +53,13 @@ export function CreateFeed() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Create Feed</Button>
+        <Button className="hover:shadow-2xl font-bold text-lg py-1 w-full translate-y-1 transition duration-700 ease-in-out"><Plus />New post</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Create feed</DialogTitle>
+          <DialogTitle>New post</DialogTitle>
           <DialogDescription>
-            Create your feed here
+            Create your Post
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={createFeed}  className="grid gap-4 py-4">
