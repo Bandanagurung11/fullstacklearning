@@ -1,6 +1,16 @@
 import express from "express";
 import mongoose, { Mongoose } from "mongoose";
 import cors from "cors";
+import cloudinary from "cloudinary";
+import multer from "multer";
+const upload = multer({ dest: 'uploads/' })
+
+
+cloudinary.config({ 
+  cloud_name: 'dgx5rqttr', 
+  api_key: '599453627429327', 
+  api_secret: '97T6zfYbp13IQKhUcVLA1VUJ6p0'
+});
 
 const app = express();
 app.use(cors());
@@ -86,9 +96,12 @@ app.get("/feeds", async (req, res) => {
     }
   });
 
-  app.post("/feeds", async (req, res) => {
+  app.post("/feeds", upload.single("image"), async (req, res) => {
     try {
-      const newFeed = await new Feeds(req.body).save();
+      const response= await cloudinary.uploader
+  .upload(req.file.path);
+ 
+      const newFeed = await new Feeds({...req.body, image:response.secure_url}).save();
       return res.status(201).json(newFeed); //201 status code for creating something
     } catch (error) {
       console.log("something went wrong in posts blog", error);

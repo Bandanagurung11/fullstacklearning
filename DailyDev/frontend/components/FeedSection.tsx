@@ -13,18 +13,28 @@ import React, { FormEvent, useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import Link from "next/link";
 
-interface Ifeed{
-  _id :string;
-  title : string;
-  image : string;
-  likeCount : number
+interface Ifeed {
+  _id: string;
+  title: string;
+  image: string;
+  likeCount: number;
 }
 
 export default function FeedSection() {
   const { toast } = useToast();
 
-  const [feeds, setFeeds] = useState <Ifeed[] | undefined>(undefined);
+  const [feeds, setFeeds] = useState<Ifeed[] | undefined>(undefined);
+  const [doLike, setDoLike] = useState(false);
+  console.log(doLike);
+  const [downVote, setDownVote] = useState(false);
 
   const fetchFeeds = async () => {
     try {
@@ -40,7 +50,7 @@ export default function FeedSection() {
     fetchFeeds();
   }, []);
 
-  const handleDeleteFeed = async (_id:string) => {
+  const handleDeleteFeed = async (_id: string) => {
     try {
       // run delete function backend ko
       const response = await axios.delete(`http://localhost:4000/feeds/${_id}`);
@@ -58,20 +68,46 @@ export default function FeedSection() {
     }
   };
 
-  const handleLikeCount=async(e:FormEvent<HTMLElement>, _id:string)=>{
+  const handleLikeCount = async (e: FormEvent<HTMLElement>, _id: string) => {
+    e.stopPropagation();
+    if (doLike) return;
+
     try {
-      const response = await axios.patch(`http://localhost:4000/feeds/${_id}`{
-        $inc : likeCount +1;
-      })
-      
+      const response = await axios.patch(`http://localhost:4000/feeds/${_id}`, {
+        $inc: { likeCount: 1 },
+      });
+      console.log(response);
+      if (response) {
+        fetchFeeds();
+        setDoLike(true);
+      }
     } catch (error) {
-      console.log("something went wrong", error)
+      console.log("something went wrong", error);
       toast({
-        title: "couldn't like the post"
-      })
-      
+        title: "couldn't like the post",
+      });
     }
-  }
+  };
+
+  const dislikeCount = async (e: FormEvent<HTMLFormElement>, _id: string) => {
+
+    e.stopPropagation();
+    if (!doLike) return;
+
+    try {
+      const responce = await axios.patch(`http://localhost:4000/feeds/${_id}`, {
+        $inc: { likeCount: -1 },
+      });
+      console.log(responce);
+      setDoLike(false);
+      fetchFeeds();
+    } catch (error) {
+      console.log("something went wrong", error);
+      toast({
+        title: " couldn't remove the upvote",
+      });
+    }
+  };
 
   const icons = [
     {
@@ -248,14 +284,17 @@ export default function FeedSection() {
         <div className="flex gap-4">
           {icons.map((icon, index) => (
             <div key={index} className="bg-gray-200 p-2 rounded-2xl">
-              {icon.svg} 
+              {icon.svg}
             </div>
-            
           ))}
         </div>
         <div className="flex gap-6">
-        <Button className="font-bold bg-gray-200 text-black py-5 px-6 hover:bg-gray-300 opacity-60">Skip for now</Button>
-        <Button className="font-bold shadow hover:shadow-2xl py-5 px-6 transition duration-500 ease-in-out">Add shortcuts</Button>
+          <Button className="font-bold bg-gray-200 text-black py-5 px-6 hover:bg-gray-300 opacity-60">
+            Skip for now
+          </Button>
+          <Button className="font-bold shadow hover:shadow-2xl py-5 px-6 transition duration-500 ease-in-out">
+            Add shortcuts
+          </Button>
         </div>
       </div>
 
@@ -270,9 +309,8 @@ export default function FeedSection() {
         </div>
       </div>
 
-
       <div className="grid grid-cols-3 gap-12">
-        {feeds?.map((feed:Ifeed, index:number) => (
+        {feeds?.map((feed: Ifeed, index: number) => (
           <div
             key={index}
             className="bg-[#F5F8FC] rounded-lg shadow-lg p-4  space-y-4"
@@ -287,28 +325,91 @@ export default function FeedSection() {
             ></Image>
             <div className="flex gap-4 items-center justify-between">
               <div className="flex gap-2 items-center bg-[#F2F2F3]">
-                <div className="hover:bg-[#B8E9D2] flex items-center p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
-                  
-                  <ArrowBigUp onClick={(e)=>handleLikeCount(e, feed._id)} className="h-6 w-6" /> {feed.likeCount}
-                  
-                </div>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="hover:bg-[#B8E9D2] flex items-center p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
+                        <ArrowBigUp
+                          onClick={(e) => {
+                            if (doLike) {
+                              dislikeCount(e, feed._id);
+                            } else {
+                              handleLikeCount(e, feed._id);
+                            }
+                          }}
+                          className="h-6 w-6"
+                        />{" "}
+                        {feed.likeCount}
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p> {doLike ? "Remove Upvote" : "Upvote"}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
 
-                <div className="hover:bg-[#E4BEBF] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
-                <ArrowBigDown className="h-6 w-6" />
-                </div>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="hover:bg-[#E4BEBF] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
+                        <ArrowBigDown
+                          onClick={() => setDownVote(!downVote)}
+                          className="h-6 w-6"
+                        />
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p> {downVote ? "Remove Downvote" : "Downvote"}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
 
-              <div className="hover:bg-[#BDEFF5] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
-                <MessageCircleMore />
-              </div>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <div className="hover:bg-[#BDEFF5] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
+                      <Link href={`Post/comment/${feed._id}`}>
+                      <MessageCircleMore  />
+                      </Link>
+                      
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Comments</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
 
-              <div className="hover:bg-[#F7DACA] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
+              
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                  <div className="hover:bg-[#F7DACA] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
                 <BookMarked />
               </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Bookmark</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
 
-              <div className="hover:bg-[#E8C7F9] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
+              
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                  <div className="hover:bg-[#E8C7F9] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
                 <Trash onClick={() => handleDeleteFeed(feed._id)} />
               </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Delete Post</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
             </div>
           </div>
         ))}

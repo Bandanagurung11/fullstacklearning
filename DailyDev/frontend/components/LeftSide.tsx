@@ -1,9 +1,24 @@
 "use client"
-import { SquareChevronLeft } from "lucide-react";
+import { Eye, Flame, SquareChevronLeft, Users } from "lucide-react";
 import React, { useState } from "react";
 
 import Image from "next/image";
 import { CreateFeed } from "./CreateFeed";
+
+const list=[
+  {
+    icon:<Users className="h-5 w-5" />,
+    name: "Following"
+  },
+  {
+    icon:<Flame className="h-5 w-5" />,
+    name: "Explore"
+  },
+  {
+    icon:<Eye className="h-5 w-5" />,
+    name: "History"
+  }
+]
 
 
 export default function LeftSide() {
@@ -24,11 +39,12 @@ export default function LeftSide() {
       </div>
 
       <div>
-        <div className="flex justify-between  py-2 items-center cursor-pointer hover:bg-[#F2F2F3] transition duration-500 ease-in-out">
-          <div className="flex gap-2">
-            <div className=" h-6 w-6 rounded-2xl flex items-center justify-center overflow-hidden">
+        <div className="flex flex-col space-y-4 p-2  ">
+          <div>
+          <div className="flex gap-2 items-center cursor-pointer hover:bg-gray-300 transition duration-500 ease-in-out">
+            <div className=" h-5 w-5 rounded-lg flex items-center justify-center overflow-hidden">
               <Image
-                className="h-6 w-6 object-cover"
+                className="h-5 w-5 object-cover"
                 src="https://images.unsplash.com/photo-1737928946596-a9c098b2019d?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="thisisprofile"
                 height={100}
@@ -37,6 +53,16 @@ export default function LeftSide() {
             </div>
             <p>my feed</p>
           </div>
+          </div>
+          {
+            list.map((eachItems, index)=>(
+              <div key={index} className="flex gap-2 items-center cursor-pointer hover:bg-gray-300 transition duration-500 ease-in-out">
+              <p>{eachItems.icon}</p>
+              <p >{eachItems.name}</p>
+            </div>
+
+            ))
+          }
           
         </div>
       </div>

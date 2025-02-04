@@ -23,13 +23,20 @@ export function CreateFeed() {
     
 
     const [title, setTitle] = useState("");
-  const [image, setImage] = useState("");
+    const [image, setImage] = useState<File | null>();
+
+  
+
+
   const createFeed = async () => {
+    if(!image){
+      return;
+    }
+    const formData= new FormData();
+    formData.append("title", title);
+    formData.append("image", image);
     try {
-      const response = await axios.post("http://localhost:4000/feeds", {
-        title: title,
-        image: image,
-      });
+      const response = await axios.post("http://localhost:4000/feeds", formData);
 
       toast({
         title: "Feed created Successfully"
@@ -37,7 +44,7 @@ export function CreateFeed() {
 
       if (response) {
         setTitle("");
-        setImage("");
+        setImage(null);
       }
 
       console.log(response.data, "response");
@@ -75,7 +82,7 @@ export function CreateFeed() {
             <Label htmlFor="image" className="text-right">
               Image
             </Label>
-            <Input id="image" required className="col-span-3" onChange={(e) => setImage(e.target.value)} />
+            <Input id="image" type="file" required className="col-span-3" onChange={(e) => setImage(e.target.files[0])} />
           </div>
 
           <DialogFooter>
