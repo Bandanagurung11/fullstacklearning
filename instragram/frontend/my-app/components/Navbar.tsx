@@ -4,10 +4,11 @@ import { Heart, MessageCircleMore } from 'lucide-react';
 import { RegisterDialog } from './RegisterDialog';
 import { FeedCreation } from './FeedCreation';
 
-export default function Navbar() {
+export default function Navbar({heading} ) {
+  
   return (
     <div className=' flex items-center justify-between'>
-      <p>INSTRAGRAM</p>
+  <p>{heading}</p>
       <div className='flex items-center gap-4'>
         {/* <Button size="sm">Register</Button> */}
         <FeedCreation/>

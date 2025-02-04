@@ -22,24 +22,28 @@ export function FeedCreation() {
 
     const {toast} = useToast();
   const [title, setTitle] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState<File | null>();
 
   const [loading, setloading] = useState(false);
   console.log(loading);
 
   const createPost = async (e) => {
     e.preventDefault();
+    if(!image){
+      return;
+    }
+
     setloading(true);
+    const formData= new FormData();
+    formData.append("title", title);
+    formData.append("image", image);
     try {
-      const response = await axios.post("http://localhost:4000/Posts", {
-        title: title,
-        image: image,
-      });
+      const response = await axios.post("http://localhost:4000/Posts", formData);
 
       if (response) {
         setloading(false);
         setTitle("");
-        setImage("");
+        setImage(null);
         
         toast({
             title : "post creation success"
@@ -90,10 +94,11 @@ export function FeedCreation() {
               image
             </Label>
             <Input
+            type="file"
               id="image"
               className="col-span-3"
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
+              // value={image} for string only not for number
+              onChange={(e) => setImage(e.target.files[0])}
             />
           </div>
           <DialogFooter>

@@ -1,6 +1,15 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import cloudinary from "cloudinary"; // to upload image before uploading to the
+import multer from "multer"; //middlewae package to handling form data
+const upload = multer({ dest: "uploads/" });
+
+cloudinary.config({
+  cloud_name: "dgx5rqttr",
+  api_key: "599453627429327",
+  api_secret: "97T6zfYbp13IQKhUcVLA1VUJ6p0",
+});
 
 // 1. server setup
 const app = express();
@@ -33,7 +42,7 @@ const postSchema = new mongoose.Schema({
 //user schema creating
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
-  profilePicture: { type: String, required: true },
+  profilePicture: { type: String, required: true },
 });
 
 // 5. model configuration (table)
@@ -43,9 +52,9 @@ const User = mongoose.model("User", userSchema);
 
 // User route
 
-app.get("/", async (req, res)=>{
+app.get("/", async (req, res) => {
   return res.send("server is running");
-})
+});
 
 app.post("/users", async (req, res) => {
   try {
@@ -91,7 +100,9 @@ app.patch("/users/:id", async (req, res) => {
     }
 
     // If user exist then update the user
-    const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     return res.status(200).json(updatedUser);
   } catch (error) {
     return res.status(500).json({
@@ -141,9 +152,15 @@ app.get("/Posts", async (req, res) => {
 });
 
 //create route
-app.post("/Posts", async (req, res) => {
+app.post("/Posts", upload.single("image"), async (req, res) => {
   try {
-    const newPost = await new Post(req.body).save();
+    console.log(req);
+    console.log(req.body, "bandana");
+
+    //upload image to couldinary before saving to database
+    const response = await cloudinary.uploader.upload(req.file.path);
+      console.log(response, response.secure_url, "response"); // couldinary will give secure-url after uploading there
+    const newPost = await new Post({...req.body, image: response.secure_url}).save();
     return res.status(201).json(newPost); //201 status code for creating something
   } catch (error) {
     console.log("something went wrong in posts blog", error);
@@ -182,11 +199,9 @@ app.patch("/Posts/:id", async (req, res) => {
     }
     // if post exist the update the post
 
-    const updatedPost = await Post.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
+    const updatedPost = await Post.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     return res.status(200).json(updatedPost);
   } catch (error) {
     return res.status(500).json({
@@ -196,28 +211,23 @@ app.patch("/Posts/:id", async (req, res) => {
   }
 });
 
-
 // delete by id
 app.delete("/Posts/:id", async (req, res) => {
-    try {
-      const singlePost = await Post.findById(req.params.id);
-      if (!singlePost) {
-        return res.status(404).json({
-          message: "Post not found",
-        });
-      }
-      // if post exist the delete the post
-  
-      const deletesPost = await Post.findByIdAndDelete(
-        req.params.id,
-        
-      );
-      return res.status(200).json(deletesPost);
-    } catch (error) {
-      return res.status(500).json({
-        message: "something went wrong",
-        error: error,
+  try {
+    const singlePost = await Post.findById(req.params.id);
+    if (!singlePost) {
+      return res.status(404).json({
+        message: "Post not found",
       });
     }
-  });
-  
+    // if post exist the delete the post
+
+    const deletesPost = await Post.findByIdAndDelete(req.params.id);
+    return res.status(200).json(deletesPost);
+  } catch (error) {
+    return res.status(500).json({
+      message: "something went wrong",
+      error: error,
+    });
+  }
+});
