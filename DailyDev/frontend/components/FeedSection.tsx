@@ -32,10 +32,9 @@ export default function FeedSection() {
   const { toast } = useToast();
 
   const [feeds, setFeeds] = useState<Ifeed[] | undefined>(undefined);
-  const [doLike, setDoLike] = useState(false);
-  console.log(doLike);
-  const [downVote, setDownVote] = useState(false);
 
+  const [doLike, setDoLike] = useState(false);
+  const [downVote, setDownVote] = useState(false);
   const fetchFeeds = async () => {
     try {
       const receivedFeeds = await axios.get("http://localhost:4000/feeds");
@@ -71,7 +70,6 @@ export default function FeedSection() {
   const handleLikeCount = async (e: FormEvent<HTMLElement>, _id: string) => {
     e.stopPropagation();
     if (doLike) return;
-
     try {
       const response = await axios.patch(`http://localhost:4000/feeds/${_id}`, {
         $inc: { likeCount: 1 },
@@ -90,7 +88,6 @@ export default function FeedSection() {
   };
 
   const dislikeCount = async (e: FormEvent<HTMLFormElement>, _id: string) => {
-
     e.stopPropagation();
     if (!doLike) return;
 
@@ -370,9 +367,8 @@ export default function FeedSection() {
                   <TooltipTrigger>
                     <div className="hover:bg-[#BDEFF5] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
                       <Link href={`Post/comment/${feed._id}`}>
-                      <MessageCircleMore  />
+                        <MessageCircleMore />
                       </Link>
-                      
                     </div>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -381,13 +377,12 @@ export default function FeedSection() {
                 </Tooltip>
               </TooltipProvider>
 
-              
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
-                  <div className="hover:bg-[#F7DACA] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
-                <BookMarked />
-              </div>
+                    <div className="hover:bg-[#F7DACA] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
+                      <BookMarked />
+                    </div>
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>Bookmark</p>
@@ -395,21 +390,18 @@ export default function FeedSection() {
                 </Tooltip>
               </TooltipProvider>
 
-              
-
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
-                  <div className="hover:bg-[#E8C7F9] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
-                <Trash onClick={() => handleDeleteFeed(feed._id)} />
-              </div>
+                    <div className="hover:bg-[#E8C7F9] p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
+                      <Trash onClick={() => handleDeleteFeed(feed._id)} />
+                    </div>
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>Delete Post</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
-
             </div>
           </div>
         ))}
