@@ -5,11 +5,34 @@ import cloudinary from "cloudinary"; // to upload image before uploading to the
 import multer from "multer"; //middlewae package to handling form data
 const upload = multer({ dest: "uploads/" });
 
+import bcrypt from "bcrypt" //its hash/ bcrypt the plane password and decode it
+//example 12345 ---->$akc
+
+// var jwt = require('jsonwebtoken'); traditional way of importing
+
+import jwt from "jsonwebtoken";
+
+
 cloudinary.config({
   cloud_name: "dgx5rqttr",
   api_key: "599453627429327",
   api_secret: "97T6zfYbp13IQKhUcVLA1VUJ6p0",
 });
+
+//verify token
+const verifyToken =(req, res, next)=>{
+  const token = req.headers["authorization"];
+  if(!token){
+    return res.status(401).json({message: "No token provided"});
+  }
+  jwt.verify(token, "!@E#@fvcnwevw$@$", (err,decoded)=>{
+  if(err){
+    return res.status(403).json({message: "Failed to authenticate token"});
+  }
+  console.log(decoded, "decoded");
+  //req.useId =decoded.userId;
+  })
+}
 
 // 1. server setup
 const app = express();
@@ -41,7 +64,8 @@ const postSchema = new mongoose.Schema({
 
 //user schema creating
 const userSchema = new mongoose.Schema({
-  username: { type: String, required: true },
+  username: { type: String, required: true, unique:true },
+  password: { type: String, required: true },
   profilePicture: { type: String, required: true },
 });
 
@@ -56,10 +80,55 @@ app.get("/", async (req, res) => {
   return res.send("server is running");
 });
 
-app.post("/users", async (req, res) => {
+app.post("/users",verifyToken, async (req, res) => {
   try {
-    const newUser = await new User(req.body).save();
+    //check if username is already taken
+    const yesUserExit = await User.findOne({username:req.body.username});
+    console.log(yesUserExit);
+    if(yesUserExit){
+      return res.status(409).json({message: "user already exist"});
+    }
+    // console.log(req.body);
+  //bcrypt the plane password before saving to the database
+  const saltRounds =10;
+  const hashPassword = await bcrypt.hash(req.body.password, saltRounds)
+  console.log(hashPassword, "hashpassword")
+    const newUser = await new User({...req.body, password:hashPassword}).save();
+    
     return res.status(201).json(newUser);
+  } catch (error) {
+    return res.status(500).json({
+      message: "Something went wrong",
+      error: error,
+    });
+  }
+});
+
+
+app.post("/users/login", async (req, res) => {
+  try {
+
+    //check if username exist or not
+    const yesUserNameExit = await User.findOne({username:req.body.username});
+    if(!yesUserNameExit){
+      return res.status(404).json({message: "user does not exit"})
+    }
+
+    //compare user password if user exist
+    const passwordMatch = await bcrypt.compare(req.body.password, yesUserNameExit.password )  //1244 and !@241dc
+    if(!passwordMatch){
+      return res.status(401).json({message: "password doesn't match"});
+    }
+
+    //generate token
+    // var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
+    const jwtToken = jwt.sign({username:req.body.username}, "!@E#@fvcnwevw$@$", {expiresIn: '24hr'});
+    return res.status(200).json({
+      message: "login successful",
+      jwtToken: jwtToken,
+      user : yesUserNameExit
+    });
+    
   } catch (error) {
     return res.status(500).json({
       message: "Something went wrong",
