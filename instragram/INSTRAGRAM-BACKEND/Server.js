@@ -6,7 +6,8 @@ import multer from "multer"; //middlewae package to handling form data
 const upload = multer({ dest: "uploads/" });
 
 import bcrypt from "bcrypt" //its hash/ bcrypt the plane password and decode it
-//example 12345 ---->$akc
+//example 12345 ---->$akc#%^
+//compare if 12345 is equal to $akc#%^
 
 // var jwt = require('jsonwebtoken'); traditional way of importing
 
@@ -80,7 +81,7 @@ app.get("/", async (req, res) => {
   return res.send("server is running");
 });
 
-app.post("/users",verifyToken, async (req, res) => {
+app.post("/users", upload.single("profilePicture"),  async (req, res) => {
   try {
     //check if username is already taken
     const yesUserExit = await User.findOne({username:req.body.username});
@@ -90,10 +91,14 @@ app.post("/users",verifyToken, async (req, res) => {
     }
     // console.log(req.body);
   //bcrypt the plane password before saving to the database
-  const saltRounds =10;
+  const saltRounds =10; //const factor for hashing password
   const hashPassword = await bcrypt.hash(req.body.password, saltRounds)
   console.log(hashPassword, "hashpassword")
-    const newUser = await new User({...req.body, password:hashPassword}).save();
+
+  //upload image to couldinary before saving to database
+  const response = await cloudinary.uploader.upload(req.file.path);
+  console.log(response, response.secure_url, "response"); // couldinary will give secure-url after uploading there
+    const newUser = await new User({...req.body, password:hashPassword, profilePicture:response.secure_url}).save();
     
     return res.status(201).json(newUser);
   } catch (error) {
@@ -221,7 +226,7 @@ app.get("/Posts", async (req, res) => {
 });
 
 //create route
-app.post("/Posts", upload.single("image"), async (req, res) => {
+app.post("/Posts", verifyToken, upload.single("image"), async (req, res) => {
   try {
     console.log(req);
     console.log(req.body, "bandana");

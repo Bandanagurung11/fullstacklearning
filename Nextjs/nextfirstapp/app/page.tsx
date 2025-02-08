@@ -2,6 +2,7 @@ import { BlogCard } from '@/components/BlogCard'
 import { Faq } from '@/components/Faq'
 import LoginForm from '@/components/LoginForm'
 import MyChart from '@/components/MyChart'
+import SlideUpAnimation from '@/components/SlideUpAnimation'
 import { Button } from '@/components/ui/button'
 import { UserDialog } from '@/components/UserDialog'
 import Link from 'next/link'
@@ -14,6 +15,7 @@ export default function Page() {
         <Link href={"/Contact"}>contact</Link>
         <Link href={"/About"}>about</Link>
       </div>
+      <p className='text-myskyblue-50'>Lorem ipsum dolor sit.</p>
 
       <div className='grid grid-cols-6 gap-12'>
       <Button variant={"default"}>Hello</Button>
@@ -23,6 +25,9 @@ export default function Page() {
       <Button variant={"outline"}>Hello</Button>
       <Button variant={"secondary"}>Hello</Button>
       </div>
+      <hr />
+      <SlideUpAnimation/>
+      <hr />
       <Faq/>
       <BlogCard/>
       <UserDialog/>
