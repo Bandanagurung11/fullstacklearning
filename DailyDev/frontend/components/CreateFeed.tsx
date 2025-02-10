@@ -15,8 +15,10 @@ import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 import { Plus } from "lucide-react";
 import { useState } from "react";
+import { useSidebar } from "./SidebarContext";
 
 export function CreateFeed() {
+  const {isExpanded} = useSidebar();
   const { toast } = useToast();
   const [title, setTitle] = useState("");
   const [image, setImage] = useState<File | null>();
@@ -55,9 +57,9 @@ export function CreateFeed() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="hover:shadow-2xl font-bold text-lg py-1 w-full translate-y-1 transition duration-700 ease-in-out">
+        <Button className="hover:shadow-2xl rounded-xl font-bold text-lg py-1 w-full translate-y-1 transition duration-700 ease-in-out">
           <Plus />
-          New post
+          {isExpanded && <p className="text-sm">New post</p>}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">

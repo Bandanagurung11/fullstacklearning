@@ -1,15 +1,16 @@
-import FeedSection from '@/components/FeedSection'
-import LeftSide from '@/components/LeftSide'
-import Navbar from '@/components/Navbar'
-import React from 'react'
+import FeedSection from "@/components/FeedSection";
+import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/Navbar";
+import React from "react";
 
 export default function page() {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <hr />
-      <LeftSide/>
-      <FeedSection/>
+
+      <Sidebar />
+      <FeedSection />
     </div>
-  )
+  );
 }

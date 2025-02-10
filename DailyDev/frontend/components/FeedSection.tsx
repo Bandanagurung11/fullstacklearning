@@ -20,6 +20,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
+import { useSidebar } from "./SidebarContext";
+
 
 interface Ifeed {
   _id: string;
@@ -29,12 +31,12 @@ interface Ifeed {
 }
 
 export default function FeedSection() {
+  const { isExpanded } = useSidebar()
   const { toast } = useToast();
 
   const [feeds, setFeeds] = useState<Ifeed[] | undefined>(undefined);
-
-  const [doLike, setDoLike] = useState(false);
-  const [downVote, setDownVote] = useState(false);
+   const [like, setLike] = useState(false);
+   const [downVote, setDownVote] = useState(false);
   const fetchFeeds = async () => {
     try {
       const receivedFeeds = await axios.get("http://localhost:4000/feeds");
@@ -67,9 +69,25 @@ export default function FeedSection() {
     }
   };
 
-  const handleLikeCount = async (e: FormEvent<HTMLElement>, _id: string) => {
+  const handleLikeCount =async (e : FormEvent<HTMLFormElement>, _id :string)=>{
     e.stopPropagation();
-    if (doLike) return;
+    if(like){
+      try {
+        const responce = await axios.patch(`http://localhost:4000/feeds/${_id}`, {
+          $inc: { likeCount: -1 },
+        });
+        console.log(responce);
+        setLike(false);
+        fetchFeeds();
+        return;
+      } catch (error) {
+        console.log("something went wrong", error);
+      toast({
+        title: " couldn't remove the upvote",
+      });
+      }
+    }
+
     try {
       const response = await axios.patch(`http://localhost:4000/feeds/${_id}`, {
         $inc: { likeCount: 1 },
@@ -77,7 +95,7 @@ export default function FeedSection() {
       console.log(response);
       if (response) {
         fetchFeeds();
-        setDoLike(true);
+        setLike(true);
       }
     } catch (error) {
       console.log("something went wrong", error);
@@ -85,26 +103,8 @@ export default function FeedSection() {
         title: "couldn't like the post",
       });
     }
-  };
 
-  const dislikeCount = async (e: FormEvent<HTMLFormElement>, _id: string) => {
-    e.stopPropagation();
-    if (!doLike) return;
-
-    try {
-      const responce = await axios.patch(`http://localhost:4000/feeds/${_id}`, {
-        $inc: { likeCount: -1 },
-      });
-      console.log(responce);
-      setDoLike(false);
-      fetchFeeds();
-    } catch (error) {
-      console.log("something went wrong", error);
-      toast({
-        title: " couldn't remove the upvote",
-      });
-    }
-  };
+  }
 
   const icons = [
     {
@@ -275,7 +275,7 @@ export default function FeedSection() {
   ];
 
   return (
-    <div className=" mt-24 ml-60 space-y-8 ">
+    <div className= {`${isExpanded? "ml-72" : "ml-44" } mt-24 space-y-8 `}>
       <div className="space-y-8 flex flex-col items-center ">
         <p className="text-xl font-bold">Choose your most visited sites</p>
         <div className="flex gap-4">
@@ -328,11 +328,7 @@ export default function FeedSection() {
                       <div className="hover:bg-[#B8E9D2] flex items-center p-1 transition duration-500 ease-in-out cursor-pointer rounded-lg">
                         <ArrowBigUp
                           onClick={(e) => {
-                            if (doLike) {
-                              dislikeCount(e, feed._id);
-                            } else {
-                              handleLikeCount(e, feed._id);
-                            }
+                            handleLikeCount( e,feed._id)
                           }}
                           className="h-6 w-6"
                         />{" "}
@@ -340,7 +336,7 @@ export default function FeedSection() {
                       </div>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p> {doLike ? "Remove Upvote" : "Upvote"}</p>
+                      <p> {like ? "Remove Upvote" : "Upvote"}</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
