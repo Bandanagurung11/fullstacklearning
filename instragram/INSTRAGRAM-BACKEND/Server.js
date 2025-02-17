@@ -4,6 +4,7 @@ import cors from "cors";
 import cloudinary from "cloudinary"; // to upload image before uploading to the
 import multer from "multer"; //middlewae package to handling form data
 const upload = multer({ dest: "uploads/" });
+import 'dotenv/config' //for .env file 
 
 import bcrypt from "bcrypt" //its hash/ bcrypt the plane password and decode it
 //example 12345 ---->$akc#%^
@@ -15,9 +16,9 @@ import jwt from "jsonwebtoken";
 
 
 cloudinary.config({
-  cloud_name: "dgx5rqttr",
-  api_key: "599453627429327",
-  api_secret: "97T6zfYbp13IQKhUcVLA1VUJ6p0",
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
 });
 
 //verify token
@@ -45,7 +46,7 @@ app.use(express.json()); // data aauney janey chai json fromat means object form
 //  3. database configuration
 try {
   mongoose.connect(
-    "mongodb+srv://bandanagrg881:SYZcb3feqTEzieR6@cluster0.6vvvc.mongodb.net/instragram?retryWrites=true&w=majority&appName=Cluster0"
+    process.env.MONGODB
   );
   console.log("mongodb connected successfully");
 } catch (error) {
@@ -206,11 +207,6 @@ app.delete("/users/:id", async (req, res) => {
   }
 });
 
-// listen to the server, port define for path
-app.listen(4000, () => {
-  console.log("server is running on port 4000");
-});
-
 // 6. Route configuration
 app.get("/Posts", async (req, res) => {
   try {
@@ -304,4 +300,10 @@ app.delete("/Posts/:id", async (req, res) => {
       error: error,
     });
   }
+});
+
+
+// listen to the server, port define for path
+app.listen(process.env.PORT, () => {
+  console.log(`server is running on port" ${process.env.PORT}`);
 });
